@@ -1,9 +1,9 @@
 const Input_btn_Trans = () => {
   return (
-    <div class="row justify-content-center">
-      <div class="col centrado">
+    <div className="row justify-content-center">
+      <div className="col centrado">
         <input
-          class="btn azul"
+          className="btn azul"
           type="button"
           id="btn_registro"
           value="crear transacción"

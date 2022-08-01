@@ -15,6 +15,7 @@ const CrearTransaccion = () => {
       <Input_cant_Trans />
       <br />
       <Input_btn_Trans />
+      <br />
     </>
   );
 };

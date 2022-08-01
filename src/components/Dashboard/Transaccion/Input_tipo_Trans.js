@@ -1,10 +1,10 @@
 const Input_tipo_Trans = () => {
   return (
-    <div class="row justify-content-center">
-      <div class="col-md-8">
+    <div className="row justify-content-center">
+      <div className="col-md-8">
         <label id="inicio">tipo: </label>
-        <select class="form-select" id="inp_trasn_tipo">
-          <option value="" selected disabled>
+        <select className="form-select" id="inp_trasn_tipo">
+          <option value="" defaultValue disabled>
             seleccione operación
           </option>
           ;<option value="1">Comprar</option>

@@ -11,7 +11,6 @@ const MontoInvertido = () => {
       <br />
       <Input_text_Monto />
       <br />
-      <br />
     </>
   );
 };

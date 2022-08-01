@@ -5,15 +5,15 @@ import ListarTransacciones from "./Dashboard/ListarTransacciones";
 const Dashboard = () => {
   return (
     <>
-      <div class="card shadow">
+      <div className="card shadow">
         <br />
         <CrearTransaccion />
       </div>
-      <div class="card shadow">
+      <div className="card shadow">
         <br />
         <MontoInvertido />
       </div>
-      <div class="card shadow">
+      <div className="card shadow">
         <br />
         <ListarTransacciones />
       </div>

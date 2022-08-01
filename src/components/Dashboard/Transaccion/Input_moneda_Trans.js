@@ -1,19 +1,19 @@
 const Input_moneda_Trans = () => {
   return (
-    <div class="row justify-content-center">
-      <div class="col-md-8">
+    <div className="row justify-content-center">
+      <div className="col-md-8">
         <label id="inicio">moneda: </label>
         <select
-          class="form-select"
+          className="form-select"
           id="inp_trans_moneda"
-          onchange="mostrtar_monto()"
+          //onChange="mostrtar_monto()"
         >
-          <option selected disabled>
+          <option defaultValue disabled>
             seleccione moneda
           </option>
         </select>
-        <div class="row">
-          <label class="text-muted" id="inp_trans_valor">
+        <div className="row">
+          <label className="text-muted" id="inp_trans_valor">
             Valor:
           </label>
         </div>

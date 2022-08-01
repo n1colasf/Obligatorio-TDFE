@@ -4,7 +4,7 @@ const Input_city_Reg = () => {
       <div className="col-md-8">
         <label id="inicio">ciudad: </label>
         <select className="form-select" id="inp_reg_ciudad">
-          <option selected disabled>
+          <option defaultValue disabled>
             Seleccione ciudad
           </option>
         </select>
