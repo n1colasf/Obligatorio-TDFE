@@ -12,7 +12,9 @@ function App() {
       <br />
       <Dashboard />
       <br />
+      <br/>
     </div>
+ 
   );
 }
 
