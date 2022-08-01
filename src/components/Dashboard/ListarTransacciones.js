@@ -7,6 +7,7 @@ const ListarTransacciones = () => {
     <>
       <Imagen_List />
       <Input_btn_List />
+      <br />
       <Input_lista_List />
     </>
   );

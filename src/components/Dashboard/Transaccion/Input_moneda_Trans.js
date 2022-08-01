@@ -6,9 +6,10 @@ const Input_moneda_Trans = () => {
         <select
           className="form-select"
           id="inp_trans_moneda"
+          defaultValue="default"
           //onChange="mostrtar_monto()"
         >
-          <option defaultValue disabled>
+          <option value="default" disabled>
             seleccione moneda
           </option>
         </select>

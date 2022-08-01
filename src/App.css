@@ -44,7 +44,7 @@ img {
   border-radius: 20px;
 }
 .fondo {
-  background-image: url(/src/img/Logo.png);
+  background-image: url(/src/img/fondo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

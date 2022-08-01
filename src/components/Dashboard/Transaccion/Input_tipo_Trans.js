@@ -3,8 +3,12 @@ const Input_tipo_Trans = () => {
     <div className="row justify-content-center">
       <div className="col-md-8">
         <label id="inicio">tipo: </label>
-        <select className="form-select" id="inp_trasn_tipo">
-          <option value="" defaultValue disabled>
+        <select
+          className="form-select"
+          id="inp_trasn_tipo"
+          defaultValue="default"
+        >
+          <option value="default" disabled>
             seleccione operación
           </option>
           ;<option value="1">Comprar</option>
