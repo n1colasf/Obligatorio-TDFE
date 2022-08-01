@@ -12,9 +12,8 @@ function App() {
       <br />
       <Dashboard />
       <br />
-      <br/>
+      <br />
     </div>
- 
   );
 }
 
