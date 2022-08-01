@@ -18,7 +18,6 @@ const Dashboard = () => {
         <ListarTransacciones />
       </div>
       <br />
-      <br />
     </>
   );
 };

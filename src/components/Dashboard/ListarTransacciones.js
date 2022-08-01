@@ -1,6 +1,6 @@
-import Imagen_List from "./listado transacciones/Imagen_List";
-import Input_btn_List from "./listado transacciones/Input_btn_List";
-import Input_lista_List from "./listado transacciones/Input_lista_List";
+import Imagen_List from "./Listado/Imagen_List";
+import Input_btn_List from "./Listado/Input_btn_List";
+import Input_lista_List from "./Listado/Input_lista_List";
 
 const ListarTransacciones = () => {
   return (

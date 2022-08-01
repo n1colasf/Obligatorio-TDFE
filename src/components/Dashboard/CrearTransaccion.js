@@ -1,8 +1,8 @@
-import Imagen_Transaccion from "./crear transaccion/Imagen_Transaccion";
-import Input_btn_Trans from "./crear transaccion/Input_btn_Trans";
-import Input_cant_Trans from "./crear transaccion/Input_cant_Trans";
-import Input_moneda_Trans from "./crear transaccion/Input_moneda_Trans";
-import Input_tipo_Trans from "./crear transaccion/Input_tipo_Trans";
+import Imagen_Transaccion from "./Transaccion/Imagen_Transaccion";
+import Input_btn_Trans from "./Transaccion/Input_btn_Trans";
+import Input_cant_Trans from "./Transaccion/Input_cant_Trans";
+import Input_moneda_Trans from "./Transaccion/Input_moneda_Trans";
+import Input_tipo_Trans from "./Transaccion/Input_tipo_Trans";
 
 const CrearTransaccion = () => {
   return (

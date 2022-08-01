@@ -7,8 +7,11 @@ function App() {
   return (
     <div className="container">
       <Login />
+      <br />
       <Registro />
+      <br />
       <Dashboard />
+      <br />
     </div>
   );
 }
