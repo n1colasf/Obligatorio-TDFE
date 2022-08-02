@@ -3,11 +3,12 @@ import { agregarTrans } from "../../../features/loginSlice";
 
 const Input_btn_Trans = () => {
   const dispatch = useDispatch();
+
   const idUsuario = useSelector((store) => store.usuarioLogin.id);
   const apiKey = useSelector((store) => store.usuarioLogin.apikey);
 
   const tipo = useSelector((store) => store.transaccion.tipoOperacion);
-  const moneda = useSelector((store) => store.transaccion.moneda);
+  const idMoneda = useSelector((store) => store.transaccion.moneda);
   const cantidad = useSelector((store) => store.transaccion.cantidad);
 
   const crearTransaccion = () => {
@@ -15,9 +16,9 @@ const Input_btn_Trans = () => {
     const transaccion = {
       usuarios_id: idUsuario,
       tipo_operacion: tipo,
-      moneda: moneda,
+      moneda: idMoneda,
       cantidad: cantidad,
-      valor_actual: moneda.cotizacion,
+      valor_actual: 120, //valor hardcodeado
     };
     fetch(url, {
       method: "POST",
@@ -31,6 +32,7 @@ const Input_btn_Trans = () => {
       .then((data) => {
         //bug: da ok la api pero no agrega la transaccion
         transaccion.id = data.idTransaccion;
+        console.log(transaccion);
         dispatch(agregarTrans(transaccion));
       });
   };

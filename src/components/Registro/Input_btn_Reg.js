@@ -1,9 +1,12 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { guardarApi, guardarId } from "../../features/loginSlice";
+import { useNavigate } from "react-router-dom";
 
 const Input_btn_Reg = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const usuario = useSelector((store) => store.usuarioRegistro.usuario);
   const pass = useSelector((store) => store.usuarioRegistro.pass);
   const depto = useSelector((store) => store.usuarioRegistro.idDepartamento);
@@ -29,6 +32,7 @@ const Input_btn_Reg = () => {
       .then((data) => {
         dispatch(guardarApi(data.apiKey));
         dispatch(guardarId(data.id));
+        navigate("/dashboard");
       });
   };
 

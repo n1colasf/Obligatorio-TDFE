@@ -1,10 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { guardarApi, guardarId } from "../../features/loginSlice";
+import { useNavigate } from "react-router-dom";
 
 const Input_btn_Login = () => {
   const dispatch = useDispatch();
   const usuario = useSelector((store) => store.usuarioLogin.usuario);
   const pass = useSelector((store) => store.usuarioLogin.pass);
+
+  const navigate = useNavigate();
 
   const iniciarSesion = () => {
     const url = "https://crypto.develotion.com/login.php";
@@ -23,6 +26,7 @@ const Input_btn_Login = () => {
       .then((data) => {
         dispatch(guardarApi(data.apiKey));
         dispatch(guardarId(data.id));
+        navigate("/dashboard");
         //mostrar_monedas(data.apiKey);
         //mostrar_transacciones(data.apiKey, data.id);
       });

@@ -3,7 +3,7 @@ const Input_link_Reg = () => {
     <p id="margin_top" className="centrado">
       <small className="text-muted" id="margin_top">
         ¿Ya tenés una cuenta?
-        <a id="link" href="/Obligatorio/index.html">
+        <a id="link" href="/">
           Inicia sesión
         </a>
       </small>

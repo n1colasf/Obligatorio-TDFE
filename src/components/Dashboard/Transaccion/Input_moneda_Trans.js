@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { guardarMoneda } from "../../../features/transaccionSlice";
 
-//bug: falta corregir que al cambiar la moneda se cambie el total en el otro componente
 const Input_moneda_Trans = () => {
   const monedas = useSelector((state) => state.monedas.monedas);
 
@@ -11,6 +10,7 @@ const Input_moneda_Trans = () => {
 
   let select_monedas = document.getElementById("inp_trans_moneda");
 
+  //bug: falta corregir que al cambiar la moneda se cambie el total en el otro componente
   const capturarValor = () => {
     let valorIdMoneda = input_usuario.current.value;
     dispatch(guardarMoneda(valorIdMoneda));

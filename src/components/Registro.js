@@ -40,20 +40,22 @@ const Registro = () => {
   }, []);
 
   return (
-    <div className="card shadow">
-      <br />
-      <Imagen_Reg />
-      <div className="card-body">
-        <Input_usuario_Reg />
+    <div className="container">
+      <div className="card shadow">
         <br />
-        <Input_pass_Reg />
-        <br />
-        <Input_depto_Reg />
-        <br />
-        <Input_city_Reg />
-        <br />
-        <Input_btn_Reg />
-        <Input_link_Reg />
+        <Imagen_Reg />
+        <div className="card-body">
+          <Input_usuario_Reg />
+          <br />
+          <Input_pass_Reg />
+          <br />
+          <Input_depto_Reg />
+          <br />
+          <Input_city_Reg />
+          <br />
+          <Input_btn_Reg />
+          <Input_link_Reg />
+        </div>
       </div>
     </div>
   );
