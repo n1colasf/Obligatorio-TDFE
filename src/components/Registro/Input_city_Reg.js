@@ -4,11 +4,12 @@ import { useSelector } from "react-redux";
 import { guardarCity } from "../../features/registroSlice";
 
 const Input_city_Reg = () => {
+  const dispatch = useDispatch();
+
   const deptos = useSelector((state) => state.departamentos.departamentos);
   const ciudades = useSelector((state) => state.ciudades.ciudades);
 
   const input_usuario = useRef(null);
-  const dispatch = useDispatch();
 
   const capturarValor = () => {
     let valor = input_usuario.current.value;

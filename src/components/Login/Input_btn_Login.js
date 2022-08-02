@@ -1,5 +1,4 @@
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { guardarApi, guardarId } from "../../features/loginSlice";
 
 const Input_btn_Login = () => {
@@ -24,6 +23,8 @@ const Input_btn_Login = () => {
       .then((data) => {
         dispatch(guardarApi(data.apiKey));
         dispatch(guardarId(data.id));
+        //mostrar_monedas(data.apiKey);
+        //mostrar_transacciones(data.apiKey, data.id);
       });
   };
 

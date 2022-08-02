@@ -1,8 +1,6 @@
 import { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { guardarDepto } from "../../features/registroSlice";
-
-import { useSelector } from "react-redux";
 
 const Input_depto_Reg = () => {
   const departamentos = useSelector(

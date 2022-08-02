@@ -287,9 +287,9 @@ function mostrar_total() {
     valor * Number(document.getElementById("inp_trans_total").value);
 }
 
+
 function calcular_tot_inversion() {
   let suma = 0;
-
   transaccionesUsuario.forEach(function (transaccion) {
     if (transaccion.tipo_operacion === 1) {
       suma += transaccion.cantidad * transaccion.valor_actual;

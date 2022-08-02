@@ -11,13 +11,11 @@ const Input_btn_Reg = () => {
 
   const registrarUsuario = () => {
     const url = "https://crypto.develotion.com/usuarios.php";
-
-    //bug: aca falta los selects de las ciudades y departamentos
     const datos = {
       usuario: usuario,
       password: pass,
-      idDepartamento: 3218,
-      idCiudad: 129833,
+      idDepartamento: depto,
+      idCiudad: city,
     };
 
     fetch(url, {

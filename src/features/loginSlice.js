@@ -27,6 +27,9 @@ export const loginSlice = createSlice({
     guardarTrans: (state, action) => {
       state.transacciones = action.payload;
     },
+    agregarTrans: (state, action) => {
+      state.transacciones.push(action.payload);
+    },
   },
 });
 
@@ -36,5 +39,6 @@ export const {
   guardarApi,
   guardarId,
   guardarTrans,
+  agregarTrans,
 } = loginSlice.actions;
 export default loginSlice.reducer;

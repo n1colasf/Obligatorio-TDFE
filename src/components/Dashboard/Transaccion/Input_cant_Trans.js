@@ -1,4 +1,33 @@
+import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { guardarCantidad, guardarTotal } from "../../../features/transaccionSlice";
+
 const Input_cant_Trans = () => {
+  const monedas = useSelector((state) => state.monedas.monedas);
+  const idMoneda = useSelector((state) => state.transaccion.moneda);
+
+  const input_usuario = useRef(null);
+  const dispatch = useDispatch();
+
+  let valor_total = document.getElementById("trans_valor_tot");
+
+  const capturarValor = () => {
+    let valorCantidad = input_usuario.current.value;
+    dispatch(guardarCantidad(valorCantidad));
+    {
+      monedas.forEach((moneda) => {
+        if (moneda.id == idMoneda) {
+          valor_total.innerHTML =
+            `Total: $` + ` ` + valorCantidad * moneda.cotizacion;
+          dispatch(guardarTotal(valorCantidad * moneda.cotizacion));
+        }
+      });
+    }
+
+
+
+  };
+
   return (
     <>
       <div className="row justify-content-center">
@@ -6,11 +35,12 @@ const Input_cant_Trans = () => {
           <label id="inicio">cantidad: </label>
           <input
             type="text"
+            ref={input_usuario}
             id="inp_trans_total"
             className="form-control"
-            //onKeyUp={mostrar_total()}
+            onKeyUp={capturarValor}
           />
-          <label className="text-muted" id="inp_trans_tot">
+          <label className="text-muted" id="trans_valor_tot">
             Total:
           </label>
         </div>
@@ -18,5 +48,4 @@ const Input_cant_Trans = () => {
     </>
   );
 };
-
 export default Input_cant_Trans;
