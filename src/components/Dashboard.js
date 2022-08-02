@@ -1,3 +1,4 @@
+//COMPONENTES
 import CrearTransaccion from "./Dashboard/CrearTransaccion";
 import MontoInvertido from "./Dashboard/MontoInvertido";
 import ListarTransacciones from "./Dashboard/ListarTransacciones";

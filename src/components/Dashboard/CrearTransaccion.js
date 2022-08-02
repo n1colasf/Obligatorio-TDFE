@@ -8,14 +8,16 @@ const CrearTransaccion = () => {
   return (
     <>
       <Imagen_Transaccion />
-      <Input_tipo_Trans />
-      <br />
-      <Input_moneda_Trans />
-      <br />
-      <Input_cant_Trans />
-      <br />
-      <Input_btn_Trans />
-      <br />
+      <div className="card-body">
+        <Input_tipo_Trans />
+        <br />
+        <Input_moneda_Trans />
+        <br />
+        <Input_cant_Trans />
+        <br />
+        <Input_btn_Trans />
+        <br />
+      </div>
     </>
   );
 };

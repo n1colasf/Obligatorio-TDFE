@@ -1,3 +1,5 @@
+
+//COMPONENTES
 import Imagen_Login from "./Login/Imagen_Login";
 import Input_usuario_Login from "./Login/Input_usuario_Login";
 import Input_pass_Login from "./Login/Input_pass_Login";
