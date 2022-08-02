@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { guardarCity } from "../../features/registroSlice";
 import { useSelector } from "react-redux";
+import { guardarCity } from "../../features/registroSlice";
 
 const Input_city_Reg = () => {
+  const deptos = useSelector((state) => state.departamentos.departamentos);
   const ciudades = useSelector((state) => state.ciudades.ciudades);
 
   const input_usuario = useRef(null);
@@ -14,6 +15,12 @@ const Input_city_Reg = () => {
     dispatch(guardarCity(valor));
   };
 
+  let select_ciudades = document.getElementById("inp_reg_ciudad");
+  let select_depto = useSelector(
+    (store) => store.usuarioRegistro.idDepartamento
+  );
+
+  //bug: se selecciona la primera ciudad en vez de mostrar el valor default
   return (
     <div className="row justify-content-center">
       <div className="col-md-8">
@@ -25,10 +32,14 @@ const Input_city_Reg = () => {
           defaultValue="default"
           onChange={capturarValor}
         >
-          //bug: falta agregar las ciudades al select!
           <option value="default" disabled>
-            Seleccione ciudad
+            seleccione ciudad
           </option>
+          {ciudades.forEach((ciudad) => {
+            if (ciudad.id_departamento == select_depto) {
+              select_ciudades.innerHTML += `<option value="${ciudad.id}">${ciudad.nombre}</option>`;
+            }
+          })}
         </select>
       </div>
     </div>

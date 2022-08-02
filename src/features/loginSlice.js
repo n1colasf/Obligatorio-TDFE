@@ -5,6 +5,7 @@ const initialState = {
   pass: "",
   apikey: "",
   id: 0,
+  transacciones: [],
 };
 
 export const loginSlice = createSlice({
@@ -23,9 +24,17 @@ export const loginSlice = createSlice({
     guardarId: (state, action) => {
       state.id = action.payload;
     },
+    guardarTrans: (state, action) => {
+      state.transacciones = action.payload;
+    },
   },
 });
 
-export const { guardarUsuario, guardarPass, guardarApi, guardarId } =
-  loginSlice.actions;
+export const {
+  guardarUsuario,
+  guardarPass,
+  guardarApi,
+  guardarId,
+  guardarTrans,
+} = loginSlice.actions;
 export default loginSlice.reducer;
