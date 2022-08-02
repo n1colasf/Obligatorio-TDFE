@@ -1,36 +1,27 @@
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { guardarMoneda } from "../../../features/transaccionSlice";
+import { selectMoneda } from "../../../features/monedasSlice";
 
-//bug: falta corregir que al cambiar la moneda se cambie el total en el otro componente
-const Input_moneda_Trans = () => {
+const Input_mon_Monedas = () => {
   const monedas = useSelector((state) => state.monedas.monedas);
 
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
-  let select_monedas = document.getElementById("inp_trans_moneda");
+  let select_monedas = document.getElementById("inp_mon_monedas");
 
   const capturarValor = () => {
     let valorIdMoneda = input_usuario.current.value;
-    dispatch(guardarMoneda(valorIdMoneda));
-
-    let valor_moneda = document.getElementById("inp_trans_valor");
-    {
-      monedas.forEach((moneda) => {
-        if (moneda.id == valorIdMoneda) {
-          valor_moneda.innerHTML = `Valor: $` + ` ` + moneda.cotizacion;
-        }
-      });
-    }
+    dispatch(selectMoneda(valorIdMoneda));
   };
+
   return (
     <div className="row justify-content-center">
       <div className="col-md-8">
         <label id="inicio">moneda: </label>
         <select
           className="form-select"
-          id="inp_trans_moneda"
+          id="inp_mon_monedas"
           ref={input_usuario}
           defaultValue="default"
           onChange={capturarValor}
@@ -43,13 +34,13 @@ const Input_moneda_Trans = () => {
           })}
         </select>
         <div className="row">
-          <label className="text-muted" id="inp_trans_valor">
-            Valor:
-          </label>
+          <label className="text-muted" id="inp_grafico_monedas"></label>
         </div>
+        <br />
+        <br />
       </div>
     </div>
   );
 };
 
-export default Input_moneda_Trans;
+export default Input_mon_Monedas;

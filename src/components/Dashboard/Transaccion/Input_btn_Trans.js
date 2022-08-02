@@ -21,7 +21,7 @@ const Input_btn_Trans = () => {
     };
     fetch(url, {
       method: "POST",
-      body: JSON.stringify({ transaccion }),
+      body: JSON.stringify(transaccion),
       headers: {
         "Content-Type": "application/json",
         apikey: apiKey,
@@ -29,7 +29,7 @@ const Input_btn_Trans = () => {
     })
       .then((respuesta) => respuesta.json())
       .then((data) => {
-        //bug: no se porque da ok la api pero no agrega la transaccion
+        //bug: da ok la api pero no agrega la transaccion
         transaccion.id = data.idTransaccion;
         dispatch(agregarTrans(transaccion));
       });
