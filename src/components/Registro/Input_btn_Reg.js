@@ -1,18 +1,24 @@
-import { store } from "../../store/store";
 import { useDispatch } from "react-redux";
-import { guardarApi, guardarId } from "../features/loginSlice";
+import { useSelector } from "react-redux";
+
+import { guardarApi, guardarId } from "../../features/loginSlice";
 
 const Input_btn_Reg = () => {
   const dispatch = useDispatch();
+  const usuario = useSelector((store) => store.usuarioRegistro.usuario);
+  const pass = useSelector((store) => store.usuarioRegistro.pass);
+  const depto = useSelector((store) => store.usuarioRegistro.idDepartamento);
+  const city = useSelector((store) => store.usuarioRegistro.idCiudad);
 
   const registrarUsuario = () => {
     const url = "https://crypto.develotion.com/usuarios.php";
 
+    //bug: aca falta los selects de las ciudades y departamentos
     const datos = {
-      usuario: store.usuarioRegistro.usuario,
-      password: store.usuarioRegistro.pass,
-      idDepartamento: store.usuarioRegistro.idDepartamento,
-      idCiudad: store.usuarioRegistro.idCiudad,
+      usuario: usuario,
+      password: pass,
+      idDepartamento: 3218,
+      idCiudad: 129833,
     };
 
     fetch(url, {

@@ -20,7 +20,7 @@ const Input_pass_Login = () => {
           ref={input_usuario}
           id="inp_password"
           className="form-control"
-          onChange={capturarValor}
+          onKeyUp={capturarValor}
         />
       </div>
     </div>

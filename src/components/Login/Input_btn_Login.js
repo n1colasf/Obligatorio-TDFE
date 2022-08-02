@@ -1,9 +1,11 @@
-import { store } from "../../store/store";
 import { useDispatch } from "react-redux";
-import { guardarApi, guardarId } from "../features/loginSlice";
+import { useSelector } from "react-redux";
+import { guardarApi, guardarId } from "../../features/loginSlice";
 
 const Input_btn_Login = () => {
   const dispatch = useDispatch();
+  const usuario = useSelector((store) => store.usuarioLogin.usuario);
+  const pass = useSelector((store) => store.usuarioLogin.pass);
 
   const iniciarSesion = () => {
     const url = "https://crypto.develotion.com/login.php";
@@ -11,8 +13,8 @@ const Input_btn_Login = () => {
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
-        usuario: store.usuarioLogin.usuario,
-        password: store.usuarioLogin.pass,
+        usuario: usuario,
+        password: pass,
       }),
       headers: {
         "Content-Type": "application/json",
