@@ -7,7 +7,6 @@ const GraficoVendidos = () => {
       <Imagen_Vendido />
       <Grafica_Vendido />
       <br/>
-
     </>
   );
 };

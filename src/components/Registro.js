@@ -11,6 +11,8 @@ import Input_city_Reg from "./Registro/Input_city_Reg";
 import Input_btn_Reg from "./Registro/Input_btn_Reg";
 import Input_link_Reg from "./Registro/Input_link_Reg";
 
+//bug: TypeError: null is not an object (evaluating 'select_deptos.innerHTML')
+//bug: Si navegas del login al registro por segunda vez, no se cargan los departamentos
 const Registro = () => {
   const dispatch = useDispatch();
 
@@ -38,7 +40,7 @@ const Registro = () => {
         dispatch(guardarCitys(data.ciudades));
       });
     //bug: los [] del useffect se sacan por la navegacion?
-  }, []);
+  });
 
   return (
     <div className="container">

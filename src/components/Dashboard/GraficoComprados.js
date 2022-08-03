@@ -6,8 +6,7 @@ const GraficoComprados = () => {
     <>
       <Imagen_Comp />
       <Grafica_Comp />
-      <br/>
-
+      <br />
     </>
   );
 };

@@ -7,8 +7,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
 import { Bar } from "react-chartjs-2";
+import { useSelector } from "react-redux";
 
 ChartJS.register(
   CategoryScale,
@@ -20,6 +20,14 @@ ChartJS.register(
 );
 
 const Grafica_Comp = () => {
+  const monedas = useSelector((state) => state.monedas.monedas);
+  const transacciones = useSelector(
+    (state) => state.usuarioLogin.transacciones
+  );
+
+  let suma = 0;
+  let sumas = [];
+
   return (
     <div>
       <div className="card-body">
@@ -37,17 +45,23 @@ const Grafica_Comp = () => {
             },
           }}
           data={{
-            labels: ["January", "February", "March", "April", "May", "June"],
+            labels: monedas.map((moneda) => moneda.nombre),
             datasets: [
               {
-                label: "MVDCoin",
-                data: "1, 2, 3, 4, 5, 6",
-                backgroundColor: "rgba(73, 237, 230, 0.8)",
-              },
-              {
-                label: "MVDCoin",
-                data: "1, 2, 4, 5",
-                backgroundColor: "rgba(0, 154, 147, 0.8)",
+                label: "montos por moneda",
+                data: monedas.forEach((moneda) => {
+                  suma = 0;
+                  transacciones.forEach((transaccion) => {
+                    if (transaccion.moneda === moneda.id) {
+                      if (transaccion.tipo_operacion === 1) {
+                        suma += transaccion.cantidad * transaccion.valor_actual;
+                      }
+                    }
+                  });
+                  //bug: los numeros estan correctos pero como como se muestra suma?
+                  sumas.push(suma);
+                }),
+                backgroundColor: "rgba(0, 119, 234, 0.8)",
               },
             ],
           }}

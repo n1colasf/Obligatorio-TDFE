@@ -42,12 +42,7 @@ const Grafica_Monedas = () => {
               {
                 label: "MVDCoin",
                 data: "1, 2, 3, 4, 5, 6",
-                backgroundColor: "rgba(73, 237, 230, 0.8)",
-              },
-              {
-                label: "MVDCoin",
-                data: "1, 2, 4, 5",
-                backgroundColor: "rgba(0, 154, 147, 0.8)",
+                backgroundColor: "rgba(0, 119, 234, 0.8)",
               },
             ],
           }}

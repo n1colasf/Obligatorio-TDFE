@@ -25,7 +25,7 @@ const Input_text_Monto = () => {
   return (
     <div className="row justify-content-center">
       <h2 className="gigante centrado" id="tot-trans">
-        {montoTotal.toLocaleString("en-US")}
+        $ {montoTotal.toLocaleString("en-US")}
       </h2>
       <p className="centrado mediano" id="tot-mensaje">
         {mensaje}
