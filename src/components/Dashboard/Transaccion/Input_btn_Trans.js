@@ -4,6 +4,7 @@ import { agregarTrans } from "../../../features/loginSlice";
 const Input_btn_Trans = () => {
   const dispatch = useDispatch();
 
+  const monedas = useSelector((store) => store.monedas.monedas);
   const idUsuario = useSelector((store) => store.usuarioLogin.id);
   const apiKey = useSelector((store) => store.usuarioLogin.apikey);
 
@@ -11,14 +12,21 @@ const Input_btn_Trans = () => {
   const idMoneda = useSelector((store) => store.transaccion.moneda);
   const cantidad = useSelector((store) => store.transaccion.cantidad);
 
+  let valorActMoneda = 0;
+  monedas.forEach((moneda) => {
+    if (moneda.id == idMoneda) {
+      valorActMoneda = moneda.cotizacion;
+    }
+  });
+
   const crearTransaccion = () => {
     const url = "https://crypto.develotion.com/transacciones.php";
     const transaccion = {
-      usuarios_id: idUsuario,
-      tipo_operacion: tipo,
-      moneda: idMoneda,
-      cantidad: cantidad,
-      valor_actual: 120, //valor hardcodeado
+      idUsuario: idUsuario,
+      tipoOperacion: Number(tipo),
+      moneda: Number(idMoneda),
+      cantidad: Number(cantidad),
+      valorActual: valorActMoneda,
     };
     fetch(url, {
       method: "POST",
@@ -30,10 +38,15 @@ const Input_btn_Trans = () => {
     })
       .then((respuesta) => respuesta.json())
       .then((data) => {
-        //bug: da ok la api pero no agrega la transaccion
-        transaccion.id = data.idTransaccion;
-        console.log(transaccion);
-        dispatch(agregarTrans(transaccion));
+        const aux = {
+          id: data.idTransaccion,
+          usuarios_id: transaccion.idUsuario,
+          tipo_operacion: transaccion.tipoOperacion,
+          moneda: transaccion.moneda,
+          cantidad: transaccion.cantidad,
+          valor_actual: transaccion.valorActual,
+        };
+        dispatch(agregarTrans(aux));
       });
   };
   return (

@@ -32,6 +32,8 @@ const Input_btn_Reg = () => {
       .then((data) => {
         dispatch(guardarApi(data.apiKey));
         dispatch(guardarId(data.id));
+        localStorage.setItem("apiKey", data.apiKey);
+        localStorage.setItem("id", data.id);
         navigate("/dashboard");
       });
   };

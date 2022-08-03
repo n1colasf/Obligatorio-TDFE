@@ -1,6 +1,9 @@
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { guardarCantidad, guardarTotal } from "../../../features/transaccionSlice";
+import {
+  guardarCantidad,
+  guardarTotal,
+} from "../../../features/transaccionSlice";
 
 const Input_cant_Trans = () => {
   const monedas = useSelector((state) => state.monedas.monedas);
@@ -18,14 +21,13 @@ const Input_cant_Trans = () => {
       monedas.forEach((moneda) => {
         if (moneda.id == idMoneda) {
           valor_total.innerHTML =
-            `Total: $` + ` ` + valorCantidad * moneda.cotizacion;
+            `Total: $` +
+            ` ` +
+            (valorCantidad * moneda.cotizacion).toLocaleString("en-US");
           dispatch(guardarTotal(valorCantidad * moneda.cotizacion));
         }
       });
     }
-
-
-
   };
 
   return (

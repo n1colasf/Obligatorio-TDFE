@@ -26,9 +26,9 @@ const Input_btn_Login = () => {
       .then((data) => {
         dispatch(guardarApi(data.apiKey));
         dispatch(guardarId(data.id));
+        localStorage.setItem("apiKey", data.apiKey);
+        localStorage.setItem("id", data.id);
         navigate("/dashboard");
-        //mostrar_monedas(data.apiKey);
-        //mostrar_transacciones(data.apiKey, data.id);
       });
   };
 

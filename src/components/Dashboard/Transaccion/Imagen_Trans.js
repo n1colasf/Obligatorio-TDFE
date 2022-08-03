@@ -1,6 +1,6 @@
 import ImagenTrans from "./transfer.png";
 
-const Imagen_Transaccion = () => {
+const Imagen_Trans = () => {
   return (
     <>
       <img className="card-img-top margin_bot" id="img_sm" src={ImagenTrans} />
@@ -9,4 +9,4 @@ const Imagen_Transaccion = () => {
   );
 };
 
-export default Imagen_Transaccion;
+export default Imagen_Trans;

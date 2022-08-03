@@ -88,3 +88,30 @@ margin-bottom: -25px;
   margin-top: -5px;
   margin-bottom: -5px;
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  background-color: #0d2c49;
+  text-align: center;
+  border-top: 2px solid #006496
+}
+h6 {
+  color: white;
+  font-size: 11px;
+  padding-top: 4px;
+}
+
+td {
+  text-align: center;
+}
+th {
+  text-align: center;
+}
+
+.gigante {
+  font-size: 80px;
+  font-weight: bold;
+}

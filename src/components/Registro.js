@@ -57,6 +57,9 @@ const Registro = () => {
           <Input_link_Reg />
         </div>
       </div>
+      <br />
+      <br />
+      <br />
     </div>
   );
 };

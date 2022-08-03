@@ -1,3 +1,9 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { guardarTrans } from "../features/loginSlice";
+import { guardarMonedas } from "../features/monedasSlice";
+
 //COMPONENTES
 import CrearTransaccion from "./Dashboard/CrearTransaccion";
 import MontoInvertido from "./Dashboard/MontoInvertido";
@@ -7,40 +13,18 @@ import GraficoComprados from "./Dashboard/GraficoComprados";
 import GraficoVendidos from "./Dashboard/GraficoVendidos";
 import GraficoMonedas from "./Dashboard/GraficoMonedas";
 
-import { useDispatch } from "react-redux";
-import { guardarApi, guardarId, guardarTrans } from "../features/loginSlice";
-import { guardarMonedas } from "../features/monedasSlice";
-import { useNavigate } from "react-router-dom";
-
 const Dashboard = () => {
-  //****************************************************************************************
-  //*DISPATCH Y FUNCION AUTOLIGIN AUXILIAR ***************
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const autologin = () => {
-    const usuario = "Nicolas";
-    const password = "Fernandez";
-    const urlLogin = "https://crypto.develotion.com/login.php";
-    fetch(urlLogin, {
-      method: "POST",
-      body: JSON.stringify({ usuario: usuario, password: password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((respuesta) => respuesta.json())
-      .then((data) => {
-        dispatch(guardarApi(data.apiKey));
-        dispatch(guardarId(data.id));
-        mostrar_monedas(data.apiKey);
-        mostrar_transacciones(data.apiKey, data.id);
-      });
-  };
-  //*GUARDAR MONEDAS EN STORE ******************
-  const mostrar_monedas = (apiKey) => {
-    const url = `https://crypto.develotion.com/monedas.php`;
-    fetch(url, {
+  useEffect(() => {
+    var apiKey = localStorage.getItem("apiKey");
+    var idUsuario = localStorage.getItem("id");
+
+    const urlMoneda = `https://crypto.develotion.com/monedas.php`;
+    const urlTrans = `https://crypto.develotion.com/transacciones.php?idUsuario=${idUsuario}`;
+
+    fetch(urlMoneda, {
       headers: {
         "Content-Type": "application/json",
         apikey: apiKey,
@@ -50,11 +34,7 @@ const Dashboard = () => {
       .then((data) => {
         dispatch(guardarMonedas(data.monedas));
       });
-  };
-  //*GUARDAR TRANSACCIONES DE USUARIO EN STORE ***************
-  const mostrar_transacciones = (apiKey, id) => {
-    const url = `https://crypto.develotion.com/transacciones.php?idUsuario=${id}`;
-    fetch(url, {
+    fetch(urlTrans, {
       headers: {
         apikey: apiKey,
         "Content-Type": "application/json",
@@ -64,31 +44,23 @@ const Dashboard = () => {
       .then((data) => {
         dispatch(guardarTrans(data.transacciones));
       });
-  };
+  }, []);
 
-  const iralogin = () => {
+  const autologin = () => {
     navigate("/");
   };
-  //*****************************************************************************************
+
   return (
     <>
       <div className="container">
-        <div>
-          <input
-            className="btn btn-danger text-center"
-            type="button"
-            id="btn_test_login"
-            value="test dashboard"
-            onClick={autologin}
-          ></input>
-          <input
-            className="btn btn-success text-center"
-            type="button"
-            id="btn_test_login"
-            value="login"
-            onClick={iralogin}
-          ></input>
-        </div>
+        <input
+          className="btn btn-success  text-center"
+          type="button"
+          id="btn_test_login"
+          value="ir a login"
+          onClick={autologin}
+        ></input>
+
         <div className="card shadow">
           <br />
           <CrearTransaccion />
@@ -117,6 +89,8 @@ const Dashboard = () => {
           <br />
           <GraficoMonedas />
         </div>
+        <br />
+        <br />
         <br />
       </div>
     </>
