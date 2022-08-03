@@ -115,3 +115,16 @@ th {
   font-size: 80px;
   font-weight: bold;
 }
+.mediano {
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 12px;
+}
+#chico {
+  height: 40px;
+  margin-top: -2px;
+}
+
+.btn:disabled {
+  opacity: 1;
+}

@@ -1,5 +1,7 @@
+import imgLogo from "../components/Registro/solologo.png";
+
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { guardarTrans } from "../features/loginSlice";
 import { guardarMonedas } from "../features/monedasSlice";
@@ -16,6 +18,8 @@ import GraficoMonedas from "./Dashboard/GraficoMonedas";
 const Dashboard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const usuario = useSelector((state) => state.usuarioLogin.usuario);
 
   useEffect(() => {
     var apiKey = localStorage.getItem("apiKey");
@@ -46,21 +50,20 @@ const Dashboard = () => {
       });
   }, []);
 
-  const autologin = () => {
+  const irAlogin = () => {
     navigate("/");
   };
 
   return (
     <>
       <div className="container">
-        <input
-          className="btn btn-success  text-center"
-          type="button"
-          id="btn_test_login"
-          value="ir a login"
-          onClick={autologin}
-        ></input>
-
+        <br />
+        <div className="d-grid gap-2 d-md-flex justify-content-end">
+          <button className="btn btn-light mediano" disabled>
+            <img className="img-fluid" id="chico" src={imgLogo} /> ¡hola{" "}
+            {usuario}!
+          </button>
+        </div>
         <div className="card shadow">
           <br />
           <CrearTransaccion />
@@ -88,6 +91,15 @@ const Dashboard = () => {
         <div className="card shadow">
           <br />
           <GraficoMonedas />
+        </div>
+        <br />
+        <br />
+        <div className="row">
+          <div className="col text-center">
+            <button className="btn btn-danger" onClick={irAlogin}>
+              Cerrar Sesión
+            </button>
+          </div>
         </div>
         <br />
         <br />

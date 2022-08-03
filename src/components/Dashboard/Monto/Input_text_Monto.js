@@ -4,9 +4,6 @@ const Input_text_Monto = () => {
   const transacciones = useSelector(
     (state) => state.usuarioLogin.transacciones
   );
-  const totalTrans = useSelector(
-    (state) => state.usuarioLogin.totalTransacciones
-  );
 
   let montoTotal = 0;
 
@@ -18,8 +15,11 @@ const Input_text_Monto = () => {
     }
   });
 
+  let mensaje = "";
   if (montoTotal > 0) {
+    mensaje = "¡Muy buenas inversiones! ¡Sigue así!";
   } else {
+    mensaje = "¡No desesperes! ¡Ya casi lo tienes!";
   }
 
   return (
@@ -27,7 +27,9 @@ const Input_text_Monto = () => {
       <h2 className="gigante centrado" id="tot-trans">
         {montoTotal.toLocaleString("en-US")}
       </h2>
-      <p className="centrado" id="tot-mensaje"></p>
+      <p className="centrado mediano" id="tot-mensaje">
+        {mensaje}
+      </p>
     </div>
   );
 };

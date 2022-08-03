@@ -7,6 +7,7 @@ const MontoInvertido = () => {
       <Imagen_Monto />
       <br />
       <Input_text_Monto />
+      <br/>
     </>
   );
 };

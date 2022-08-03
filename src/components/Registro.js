@@ -37,6 +37,7 @@ const Registro = () => {
       .then((data) => {
         dispatch(guardarCitys(data.ciudades));
       });
+    //bug: los [] del useffect se sacan por la navegacion?
   }, []);
 
   return (

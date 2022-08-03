@@ -38,6 +38,7 @@ const Input_moneda_Trans = () => {
           <option value="default" disabled>
             seleccione moneda
           </option>
+          //bug: existe otra manera menjor?
           {monedas.forEach((moneda) => {
             select_monedas.innerHTML += `<option value="${moneda.id}">${moneda.nombre}</option>`;
           })}

@@ -6,7 +6,6 @@ const initialState = {
   apikey: "",
   id: 0,
   transacciones: [],
-  totalTransacciones: 0,
 };
 
 export const loginSlice = createSlice({
@@ -31,9 +30,6 @@ export const loginSlice = createSlice({
     agregarTrans: (state, action) => {
       state.transacciones.push(action.payload);
     },
-    guardarTotal: (state, action) => {
-      state.totalTransacciones = action.payload;
-    },
   },
 });
 
@@ -44,6 +40,5 @@ export const {
   guardarId,
   guardarTrans,
   agregarTrans,
-  guardarTotal,
 } = loginSlice.actions;
 export default loginSlice.reducer;

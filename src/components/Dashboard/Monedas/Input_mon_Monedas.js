@@ -29,7 +29,7 @@ const Input_mon_Monedas = () => {
           <option value="default" disabled>
             seleccione moneda
           </option>
-          //bug: cambiar a componente con map
+          //bug: existe otra manera menjor?
           {monedas.forEach((moneda) => {
             select_monedas.innerHTML += `<option value="${moneda.id}">${moneda.nombre}</option>`;
           })}
@@ -37,7 +37,6 @@ const Input_mon_Monedas = () => {
         <div className="row">
           <label className="text-muted" id="inp_grafico_monedas"></label>
         </div>
-        <br />
         <br />
       </div>
     </div>

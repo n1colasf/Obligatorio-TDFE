@@ -5,9 +5,9 @@ const Input_link_Login = () => {
     <p id="margin_top" className="centrado">
       <small className="text-muted" id="margin_top">
         ¿No tenés una cuenta?
-        <a id="link" href="/registro">
+        <Link id="link" to="/registro">
           Conseguila acá
-        </a>
+        </Link>
       </small>
     </p>
   );

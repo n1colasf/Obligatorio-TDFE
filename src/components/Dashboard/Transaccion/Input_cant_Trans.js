@@ -41,6 +41,7 @@ const Input_cant_Trans = () => {
             id="inp_trans_total"
             className="form-control"
             onKeyUp={capturarValor}
+            placeholder="ingrese una cantidad"
           />
           <label className="text-muted" id="trans_valor_tot">
             Total:
