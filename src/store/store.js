@@ -6,6 +6,7 @@ import usuarioLoginReducer from "../features/loginSlice";
 import usuarioRegistroReducer from "../features/registroSlice";
 import monedasReducer from "../features/monedasSlice";
 import transaccionReducer from "../features/transaccionSlice";
+import graficasReducer from "../features/graficasSlice";
 
 export const store = configureStore({
   reducer: {
@@ -15,5 +16,6 @@ export const store = configureStore({
     usuarioRegistro: usuarioRegistroReducer,
     monedas: monedasReducer,
     transaccion: transaccionReducer,
+    graficas: graficasReducer,
   },
 });

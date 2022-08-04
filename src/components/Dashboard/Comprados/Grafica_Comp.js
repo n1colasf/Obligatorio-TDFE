@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { agregarCompras } from "../../../features/graficasSlice";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +12,6 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { useSelector } from "react-redux";
 
 ChartJS.register(
   CategoryScale,
@@ -24,9 +27,26 @@ const Grafica_Comp = () => {
   const transacciones = useSelector(
     (state) => state.usuarioLogin.transacciones
   );
+  const graficaCompras = useSelector((state) => state.graficas.graficaCompras);
+  const dispatch = useDispatch();
 
   let suma = 0;
-  let sumas = [];
+
+  useEffect(() => {
+    monedas.forEach((moneda) => {
+      suma = 0;
+      transacciones.forEach((transaccion) => {
+        if (transaccion.moneda === moneda.id) {
+          if (transaccion.tipo_operacion === 1) {
+            suma += transaccion.cantidad * transaccion.valor_actual;
+          }
+        }
+      });
+      dispatch(agregarCompras(suma));
+    });
+  }, []);
+
+  console.log(graficaCompras);
 
   return (
     <div>
@@ -48,19 +68,8 @@ const Grafica_Comp = () => {
             labels: monedas.map((moneda) => moneda.nombre),
             datasets: [
               {
-                label: "montos por moneda",
-                data: monedas.forEach((moneda) => {
-                  suma = 0;
-                  transacciones.forEach((transaccion) => {
-                    if (transaccion.moneda === moneda.id) {
-                      if (transaccion.tipo_operacion === 1) {
-                        suma += transaccion.cantidad * transaccion.valor_actual;
-                      }
-                    }
-                  });
-                  //bug: los numeros estan correctos (?) pero como como se muestra suma?
-                  sumas.push(suma);
-                }),
+                label: "monto por moneda",
+                data: graficaCompras,
                 backgroundColor: "rgba(0, 119, 234, 0.8)",
               },
             ],

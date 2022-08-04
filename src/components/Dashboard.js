@@ -20,11 +20,10 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const usuario = useSelector((state) => state.usuarioLogin.usuario);
+  const apiKey = useSelector((state) => state.usuarioLogin.apikey);
+  const idUsuario = useSelector((state) => state.usuarioLogin.id);
 
   useEffect(() => {
-    var apiKey = localStorage.getItem("apiKey");
-    var idUsuario = localStorage.getItem("id");
-
     const urlMoneda = `https://crypto.develotion.com/monedas.php`;
     const urlTrans = `https://crypto.develotion.com/transacciones.php?idUsuario=${idUsuario}`;
 

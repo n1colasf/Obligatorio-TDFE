@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { agregarVentas } from "../../../features/graficasSlice";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +12,6 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { useSelector } from "react-redux";
 
 ChartJS.register(
   CategoryScale,
@@ -25,8 +28,26 @@ const Grafica_Vendido = () => {
     (state) => state.usuarioLogin.transacciones
   );
 
+  const graficaVentas = useSelector((state) => state.graficas.graficaVentas);
+  const dispatch = useDispatch();
+
   let suma = 0;
-  let sumas = [];
+
+  useEffect(() => {
+    monedas.forEach((moneda) => {
+      suma = 0;
+      transacciones.forEach((transaccion) => {
+        if (transaccion.moneda === moneda.id) {
+          if (transaccion.tipo_operacion === 2) {
+            suma += transaccion.cantidad * transaccion.valor_actual;
+          }
+        }
+      });
+      dispatch(agregarVentas(suma));
+    });
+  }, []);
+
+  console.log(graficaVentas);
 
   return (
     <div>
@@ -48,11 +69,8 @@ const Grafica_Vendido = () => {
             labels: monedas.map((moneda) => moneda.nombre),
             datasets: [
               {
-                label: "montos por moneda",
-                data: transacciones
-                  .filter((trans) => trans.moneda == monedas.id)
-                  .filter((trans) => trans.tipo_operacion == 2)
-                  .map((trans) => trans.cantidad * trans.valor_actual),
+                label: "monto por moneda",
+                data: graficaVentas,
                 backgroundColor: "rgba(0, 119, 234, 0.8)",
               },
             ],
@@ -64,19 +82,3 @@ const Grafica_Vendido = () => {
 };
 
 export default Grafica_Vendido;
-
-/*
-monedas.forEach((moneda) => {
-                  suma = 0;
-                  transacciones.forEach((transaccion) => {
-                    if (transaccion.moneda === moneda.id) {
-                      if (transaccion.tipo_operacion === 2) {
-                        suma += transaccion.cantidad * transaccion.valor_actual;
-                      }
-                    }
-                  });
-                  //bug: los numeros estan correctos pero como como se muestra suma?
-                  sumas.push(suma);
-                }),
-
-*/

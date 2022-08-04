@@ -12,7 +12,7 @@ const Input_lista_List = () => {
         <table className="table table-hover">
           <thead>
             <tr>
-              <th scope="col">Operacion</th>
+              <th scope="col">Operación</th>
               <th scope="col">Moneda</th>
               <th scope="col">Cantidad</th>
               <th scope="col">Cotización</th>
