@@ -8,8 +8,6 @@ const Input_mon_Monedas = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
-  let select_monedas = document.getElementById("inp_mon_monedas");
-
   const capturarValor = () => {
     let valorIdMoneda = input_usuario.current.value;
     dispatch(selectMoneda(valorIdMoneda));
@@ -29,10 +27,11 @@ const Input_mon_Monedas = () => {
           <option value="default" disabled>
             seleccione moneda
           </option>
-          //bug: existe otra manera menjor?
-          {monedas.forEach((moneda) => {
-            select_monedas.innerHTML += `<option value="${moneda.id}">${moneda.nombre}</option>`;
-          })}
+          {monedas.map((moneda) => (
+            <option key={moneda.id} value={moneda.id}>
+              {moneda.nombre}
+            </option>
+          ))}
         </select>
         <div className="row">
           <label className="text-muted" id="inp_grafico_monedas"></label>

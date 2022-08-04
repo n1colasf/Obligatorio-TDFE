@@ -45,8 +45,9 @@ img {
 }
 .fondo {
   background-image: url(/src/img/fondo.jpg);
+  background-attachment: fixed;
   background-size: cover;
-  background-repeat: no-repeat;
+
 }
 #marginado {
 padding-top: 20px;    

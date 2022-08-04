@@ -15,13 +15,10 @@ const Input_city_Reg = () => {
     let valor = input_usuario.current.value;
     dispatch(guardarCity(valor));
   };
-
-  let select_ciudades = document.getElementById("inp_reg_ciudad");
   let select_depto = useSelector(
     (store) => store.usuarioRegistro.idDepartamento
   );
 
-  //bug: se selecciona la primera ciudad en vez de mostrar el valor default
   return (
     <div className="row justify-content-center">
       <div className="col-md-8">
@@ -36,11 +33,14 @@ const Input_city_Reg = () => {
           <option value="default" disabled>
             seleccione ciudad
           </option>
-          {ciudades.forEach((ciudad) => {
-            if (ciudad.id_departamento == select_depto) {
-              select_ciudades.innerHTML += `<option value="${ciudad.id}">${ciudad.nombre}</option>`;
-            }
-          })}
+          //bug: selecciona siempre la primera ciudad en vez de default
+          {ciudades
+            .filter((city) => city.id_departamento == select_depto)
+            .map((cit) => (
+              <option key={cit.id} value={cit.id}>
+                {cit.nombre}
+              </option>
+            ))}
         </select>
       </div>
     </div>

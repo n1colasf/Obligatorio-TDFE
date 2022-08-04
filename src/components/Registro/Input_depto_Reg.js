@@ -13,11 +13,7 @@ const Input_depto_Reg = () => {
   const capturarValor = () => {
     let valor = input_usuario.current.value;
     dispatch(guardarDepto(valor));
-    let select_ciudades = document.getElementById("inp_reg_ciudad");
-    select_ciudades.innerHTML = `<option value="default" disabled>seleccione ciudad</option>`;
   };
-
-  let select_deptos = document.getElementById("inp_reg_depto");
 
   return (
     <div className="row justify-content-center">
@@ -33,9 +29,11 @@ const Input_depto_Reg = () => {
           <option value="default" disabled>
             seleccione departamento
           </option>
-          {departamentos.forEach((depto) => {
-            select_deptos.innerHTML += `<option value="${depto.id}">${depto.nombre}</option>`;
-          })}
+          {departamentos.map((dep) => (
+            <option key={dep.id} value={dep.id}>
+              {dep.nombre}
+            </option>
+          ))}
         </select>
       </div>
     </div>

@@ -8,8 +8,6 @@ const Input_moneda_Trans = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
-  let select_monedas = document.getElementById("inp_trans_moneda");
-
   //bug: falta corregir que al cambiar la moneda se cambie el total en el otro componente
   const capturarValor = () => {
     let valorIdMoneda = input_usuario.current.value;
@@ -38,10 +36,11 @@ const Input_moneda_Trans = () => {
           <option value="default" disabled>
             seleccione moneda
           </option>
-          //bug: existe otra manera menjor?
-          {monedas.forEach((moneda) => {
-            select_monedas.innerHTML += `<option value="${moneda.id}">${moneda.nombre}</option>`;
-          })}
+          {monedas.map((moneda) => (
+            <option key={moneda.id} value={moneda.id}>
+              {moneda.nombre}
+            </option>
+          ))}
         </select>
         <div className="row">
           <label className="text-muted" id="inp_trans_valor">

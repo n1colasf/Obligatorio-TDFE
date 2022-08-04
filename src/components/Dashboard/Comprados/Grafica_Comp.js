@@ -58,7 +58,7 @@ const Grafica_Comp = () => {
                       }
                     }
                   });
-                  //bug: los numeros estan correctos pero como como se muestra suma?
+                  //bug: los numeros estan correctos (?) pero como como se muestra suma?
                   sumas.push(suma);
                 }),
                 backgroundColor: "rgba(0, 119, 234, 0.8)",
