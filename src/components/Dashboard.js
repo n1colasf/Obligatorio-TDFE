@@ -1,5 +1,3 @@
-import imgLogo from "../components/Registro/solologo.png";
-
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +5,8 @@ import { guardarTrans } from "../features/loginSlice";
 import { guardarMonedas } from "../features/monedasSlice";
 
 //COMPONENTES
+import imgLogo from "../components/Registro/solologo.png";
+
 import CrearTransaccion from "./Dashboard/CrearTransaccion";
 import MontoInvertido from "./Dashboard/MontoInvertido";
 import ListarTransacciones from "./Dashboard/ListarTransacciones";
@@ -24,29 +24,33 @@ const Dashboard = () => {
   const idUsuario = useSelector((state) => state.usuarioLogin.id);
 
   useEffect(() => {
-    const urlMoneda = `https://crypto.develotion.com/monedas.php`;
-    const urlTrans = `https://crypto.develotion.com/transacciones.php?idUsuario=${idUsuario}`;
+    if (apiKey == "") {
+      navigate("/");
+    } else {
+      const urlMoneda = `https://crypto.develotion.com/monedas.php`;
+      const urlTrans = `https://crypto.develotion.com/transacciones.php?idUsuario=${idUsuario}`;
 
-    fetch(urlMoneda, {
-      headers: {
-        "Content-Type": "application/json",
-        apikey: apiKey,
-      },
-    })
-      .then((respuesta) => respuesta.json())
-      .then((data) => {
-        dispatch(guardarMonedas(data.monedas));
-      });
-    fetch(urlTrans, {
-      headers: {
-        apikey: apiKey,
-        "Content-Type": "application/json",
-      },
-    })
-      .then((respuesta) => respuesta.json())
-      .then((data) => {
-        dispatch(guardarTrans(data.transacciones));
-      });
+      fetch(urlMoneda, {
+        headers: {
+          "Content-Type": "application/json",
+          apikey: apiKey,
+        },
+      })
+        .then((respuesta) => respuesta.json())
+        .then((data) => {
+          dispatch(guardarMonedas(data.monedas));
+        });
+      fetch(urlTrans, {
+        headers: {
+          apikey: apiKey,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((respuesta) => respuesta.json())
+        .then((data) => {
+          dispatch(guardarTrans(data.transacciones));
+        });
+    }
   }, []);
 
   const irAlogin = () => {

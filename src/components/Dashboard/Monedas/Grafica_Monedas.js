@@ -1,29 +1,37 @@
+import { useSelector } from "react-redux";
+
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
 } from "chart.js";
-
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
 );
 
 const Grafica_Monedas = () => {
+  const transacciones = useSelector(
+    (store) => store.usuarioLogin.transacciones
+  );
+  const selectMonedas = useSelector((store) => store.monedas.monedaSelect);
+
   return (
     <div>
       <div className="card-body">
-        <Bar
+        <Line
           options={{
             responsive: true,
             plugins: {
@@ -37,12 +45,18 @@ const Grafica_Monedas = () => {
             },
           }}
           data={{
-            labels: ["January", "February", "March", "April", "May", "June"],
+            labels: transacciones
+              .filter((trans) => trans.moneda == selectMonedas)
+              .map((trans) => "Id: " + trans.id),
             datasets: [
               {
-                label: "MVDCoin",
-                data: "1, 2, 3, 4, 5, 6",
+                label: "Cotizacion $",
+                data: transacciones
+                  .filter((trans) => trans.moneda == selectMonedas)
+                  .filter((trans) => trans.moneda != 0)
+                  .map((trans) => trans.valor_actual),
                 backgroundColor: "rgba(0, 119, 234, 0.8)",
+                borderColor: "rgba(0, 119, 234, 0.8)",
               },
             ],
           }}
