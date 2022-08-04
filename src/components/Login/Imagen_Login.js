@@ -1,4 +1,4 @@
-import ImagenLogin from "../Login/Criptort.png";
+import ImagenLogin from "../../img/Criptort.png";
 
 const Imagen_Login = () => {
   return (

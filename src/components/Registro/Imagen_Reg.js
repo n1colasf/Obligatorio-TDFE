@@ -1,4 +1,4 @@
-import SoloLogo from "./solologo.png";
+import SoloLogo from "../../img/solologo.png";
 
 const Imagen_Reg = () => {
   return (

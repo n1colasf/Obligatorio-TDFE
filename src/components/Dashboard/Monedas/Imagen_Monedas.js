@@ -1,4 +1,4 @@
-import ImagenMoneda from "./moneda.png";
+import ImagenMoneda from "../../../img/moneda.png";
 
 const Imagen_Monedas = () => {
   return (

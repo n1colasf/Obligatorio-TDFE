@@ -1,4 +1,4 @@
-import ImagenLista from "./Lista.png";
+import ImagenLista from "../../../img/Lista.png";
 
 const Imagen_List = () => {
   return (

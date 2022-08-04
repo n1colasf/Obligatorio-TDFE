@@ -1,4 +1,4 @@
-import ImagenSuger from "./sugerencia.png";
+import ImagenSuger from "../../../img/sugerencia.png";
 
 const Imagen_Suger = () => {
   return (

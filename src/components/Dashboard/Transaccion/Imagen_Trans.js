@@ -1,4 +1,4 @@
-import ImagenTrans from "./transfer.png";
+import ImagenTrans from "../../../img/transfer.png";
 
 const Imagen_Trans = () => {
   return (

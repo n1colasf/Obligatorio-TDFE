@@ -1,4 +1,4 @@
-import ImagenMonto from "./monto.png";
+import ImagenMonto from "../../../img/monto.png";
 
 const Imagen_Monto = () => {
   return (

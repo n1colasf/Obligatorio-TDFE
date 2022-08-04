@@ -1,4 +1,4 @@
-import ImagenVend from "./venta.png";
+import ImagenVend from "../../../img/venta.png";
 
 const Imagen_Vendido = () => {
   return (

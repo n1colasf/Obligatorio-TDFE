@@ -1,4 +1,4 @@
-import ImagenComp from "./compra.png";
+import ImagenComp from "../../../img/compra.png";
 
 const Imagen_Comp = () => {
   return (

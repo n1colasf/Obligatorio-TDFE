@@ -5,7 +5,7 @@ import { guardarTrans } from "../features/loginSlice";
 import { guardarMonedas } from "../features/monedasSlice";
 
 //COMPONENTES
-import imgLogo from "../components/Registro/solologo.png";
+import imgLogo from "../img/solologo.png";
 
 import CrearTransaccion from "./Dashboard/CrearTransaccion";
 import MontoInvertido from "./Dashboard/MontoInvertido";
