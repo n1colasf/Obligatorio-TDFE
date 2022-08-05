@@ -10,7 +10,7 @@ const Item_lista_List = ({
   let operacion = "";
   let nombreMoneda = "";
 
-  if (tipo_operacion == 1) {
+  if (tipo_operacion === 1) {
     operacion = "Compra";
   } else {
     operacion = "Venta";

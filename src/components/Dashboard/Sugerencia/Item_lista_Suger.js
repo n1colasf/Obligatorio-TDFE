@@ -7,8 +7,8 @@ const Item_lista_Suger = ({
   return (
     <>
       <li className="list-group-item text-center">
-        <strong>Moneda: </strong> {nombreMoneda} {" "}<strong>Comprado: </strong>{" "}
-        ${valor_compra} <strong>Actual: </strong>${valor_actual}
+        <strong>Moneda: </strong> {nombreMoneda} <strong>Comprado: </strong> ${" "}
+        {valor_compra} <strong>Actual: </strong>$ {valor_actual}
         <br />
         <strong>Sugerencia: </strong> {operacion}
       </li>

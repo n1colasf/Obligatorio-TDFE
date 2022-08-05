@@ -3,12 +3,12 @@ import { useSelector } from "react-redux";
 import Item_lista_Suger from "./Item_lista_Suger";
 
 const Input_lista_Suger = () => {
-  const [sugerencia, setSugerencia] = useState([]);
-
   const transacciones = useSelector(
     (store) => store.usuarioLogin.transacciones
   );
   const monedas = useSelector((store) => store.monedas.monedas);
+
+  const [sugerencia, setSugerencia] = useState([]);
 
   //bug: falta resolver la logica para que no se repita la sugerencia
   useEffect(() => {
@@ -84,8 +84,6 @@ const Input_lista_Suger = () => {
 };
 
 export default Input_lista_Suger;
-
-
 
 /*
 
