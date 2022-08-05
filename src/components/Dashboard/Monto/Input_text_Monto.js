@@ -21,7 +21,7 @@ const Input_text_Monto = () => {
         $ {montoTotal.toLocaleString("en-US")}
       </h2>
       <div className="centrado mediano" id="tot-mensaje">
-        {montoTotal > 0 ? (
+        {montoTotal >= 0 ? (
           <p className="text-success">¡Muy buenas inversiones! ¡Sigue así!</p>
         ) : (
           <p className="text-danger">¡No desesperes! ¡Ya casi lo tienes!</p>

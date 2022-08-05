@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Item_lista_Suger from "./Item_lista_Suger";
 
 const Input_lista_Suger = () => {
+
   const [sugerencia, setSugerencia] = useState([]);
 
   const transacciones = useSelector(
