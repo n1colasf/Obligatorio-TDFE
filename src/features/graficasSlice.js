@@ -10,10 +10,10 @@ export const graficasSlice = createSlice({
   initialState,
   reducers: {
     agregarVentas: (state, action) => {
-      state.graficaVentas.push(action.payload);
+      state.graficaVentas = action.payload;
     },
     agregarCompras: (state, action) => {
-      state.graficaCompras.push(action.payload);
+      state.graficaCompras = action.payload;
     },
   },
 });

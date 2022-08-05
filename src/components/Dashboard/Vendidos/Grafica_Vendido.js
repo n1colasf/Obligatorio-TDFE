@@ -34,6 +34,7 @@ const Grafica_Vendido = () => {
   let suma = 0;
 
   useEffect(() => {
+    let array = [];
     monedas.forEach((moneda) => {
       suma = 0;
       transacciones.forEach((transaccion) => {
@@ -43,9 +44,10 @@ const Grafica_Vendido = () => {
           }
         }
       });
-      dispatch(agregarVentas(suma));
+      array.push(suma);
     });
-  }, []);
+    dispatch(agregarVentas(array));
+  }, [transacciones]);
 
   console.log(graficaVentas);
 

@@ -1,27 +1,32 @@
 import { useSelector } from "react-redux";
 
-const Item_lista_Suger = ({}) => {
+const Item_lista_Suger = ({ valor_actual, moneda }) => {
   const monedas = useSelector((store) => store.monedas.monedas);
-  const operacion = "Vender";
-  const nombreMoneda = "Bitcoin";
-  const cantidad = 100;
-  const valor_actual = 1250;
-  const total = cantidad * valor_actual;
+
+  let operacion = "";
+  let nombreMoneda = "";
+
+  monedas.forEach((moneda) => {
+    if (moneda.cotizacion > valor_actual) {
+      operacion = "Comprar";
+    } else {
+      operacion = "Vender";
+    }
+  });
+
+  monedas.forEach((mon) => {
+    if (moneda === mon.id) {
+      nombreMoneda = mon.nombre;
+    }
+  });
 
   return (
     <>
-      <a
-        href="#"
-        className="list-group-item list-group-item-action text-center"
-      >
+      <li className="list-group-item text-center">
+        <strong>Moneda: </strong> {nombreMoneda}
+        <br />
         <strong>Operacion: </strong> {operacion}
-        {"  "}
-        <strong>Moneda: </strong> {nombreMoneda} {"  "}
-        <strong>Cantidad: </strong> {cantidad.toLocaleString("en-US")} <br />
-        <strong>Valor actual: </strong> $ {valor_actual.toLocaleString("en-US")}
-        {"  "}
-        <strong>Total: </strong> $ {total.toLocaleString("en-US")}
-      </a>
+      </li>
     </>
   );
 };
@@ -30,10 +35,8 @@ export default Item_lista_Suger;
 
 /* 
 const Item_lista_Suger = ({
-  tipo_operacion,
-  moneda,
-  cantidad,
-  valor_actual,
+nombreMoneda, operacion
+
 }) => {
 
 

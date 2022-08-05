@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const Grafica_Comprado = () => {
+const Grafica_Comp = () => {
   const monedas = useSelector((state) => state.monedas.monedas);
   const transacciones = useSelector(
     (state) => state.usuarioLogin.transacciones
@@ -33,6 +33,7 @@ const Grafica_Comprado = () => {
   let suma = 0;
 
   useEffect(() => {
+    let array = [];
     monedas.forEach((moneda) => {
       suma = 0;
       transacciones.forEach((transaccion) => {
@@ -42,9 +43,10 @@ const Grafica_Comprado = () => {
           }
         }
       });
-      dispatch(agregarCompras(suma));
+      array.push(suma);
     });
-  }, []);
+    dispatch(agregarCompras(array));
+  }, [transacciones]);
 
   console.log(graficaCompras);
 
@@ -80,4 +82,4 @@ const Grafica_Comprado = () => {
   );
 };
 
-export default Grafica_Comprado;
+export default Grafica_Comp;
