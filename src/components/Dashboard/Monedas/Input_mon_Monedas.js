@@ -24,8 +24,6 @@ const Input_mon_Monedas = () => {
     });
   });
 
-  console.log(monedasUnicas);
-
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 

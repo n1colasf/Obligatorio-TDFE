@@ -12,6 +12,11 @@ const Input_btn_Reg = () => {
   const depto = useSelector((store) => store.usuarioRegistro.idDepartamento);
   const city = useSelector((store) => store.usuarioRegistro.idCiudad);
 
+  let boton;
+  if (usuario === "" || pass === "" || depto === 0 || city === 0) {
+    boton = true;
+  }
+
   const registrarUsuario = () => {
     const url = "https://crypto.develotion.com/usuarios.php";
     const datos = {
@@ -28,7 +33,16 @@ const Input_btn_Reg = () => {
         "Content-Type": "application/json",
       },
     })
-      .then((respuesta) => respuesta.json())
+      .then((respuesta) =>
+        respuesta.ok
+          ? respuesta.json()
+          : respuesta
+              .json()
+              .then((error) => Promise.reject(error))
+              .catch((e) => {
+                alert(e.mensaje);
+              })
+      )
       .then((data) => {
         dispatch(guardarApi(data.apiKey));
         dispatch(guardarId(data.id));
@@ -48,6 +62,7 @@ const Input_btn_Reg = () => {
           type="button"
           id="btn_registro"
           value="registrarse"
+          disabled={boton}
         />
       </div>
     </div>

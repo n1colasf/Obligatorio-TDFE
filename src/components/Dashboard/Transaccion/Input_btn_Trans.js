@@ -14,10 +14,15 @@ const Input_btn_Trans = () => {
 
   let valorActMoneda = 0;
   monedas.forEach((moneda) => {
-    if (moneda.id == idMoneda) {
+    if (moneda.id === idMoneda) {
       valorActMoneda = moneda.cotizacion;
     }
   });
+
+  let boton;
+  if (tipo === 0 || idMoneda === 0 || cantidad === 0) {
+    boton = true;
+  }
 
   const crearTransaccion = () => {
     const url = "https://crypto.develotion.com/transacciones.php";
@@ -58,6 +63,7 @@ const Input_btn_Trans = () => {
           id="btn_registro"
           onClick={crearTransaccion}
           value="crear transacción"
+          disabled={boton}
         />
         <br />
       </div>

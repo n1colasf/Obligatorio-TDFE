@@ -9,6 +9,11 @@ const Input_btn_Login = () => {
 
   const navigate = useNavigate();
 
+  let boton;
+  if (usuario === "" || pass === "") {
+    boton = true;
+  }
+
   const iniciarSesion = () => {
     const url = "https://crypto.develotion.com/login.php";
 
@@ -22,7 +27,16 @@ const Input_btn_Login = () => {
         "Content-Type": "application/json",
       },
     })
-      .then((respuesta) => respuesta.json())
+      .then((respuesta) =>
+        respuesta.ok
+          ? respuesta.json()
+          : respuesta
+              .json()
+              .then((error) => Promise.reject(error))
+              .catch((e) => {
+                alert(e.mensaje);
+              })
+      )
       .then((data) => {
         dispatch(guardarApi(data.apiKey));
         dispatch(guardarId(data.id));
@@ -40,6 +54,7 @@ const Input_btn_Login = () => {
           id="btn_login"
           value="ingresar"
           onClick={iniciarSesion}
+          disabled={boton}
         />
       </div>
     </div>

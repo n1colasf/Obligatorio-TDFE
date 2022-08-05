@@ -10,6 +10,7 @@ const Input_lista_Suger = () => {
   );
   const monedas = useSelector((store) => store.monedas.monedas);
 
+  //bug: falta resolver la logica para que no se repita la sugerencia
   useEffect(() => {
     for (let m = 0; m <= monedas.length - 1; m++) {
       for (let i = transacciones.length - 1; i >= 0; i--) {
