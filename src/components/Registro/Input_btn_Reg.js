@@ -13,7 +13,14 @@ const Input_btn_Reg = () => {
   const city = useSelector((store) => store.usuarioRegistro.idCiudad);
 
   let boton;
-  if (usuario === "" || pass === "" || depto === 0 || city === 0) {
+  if (
+    usuario === "" ||
+    pass === "" ||
+    depto === 0 ||
+    city === 0 ||
+    depto === "default" ||
+    city === "default"
+  ) {
     boton = true;
   }
 

@@ -9,11 +9,6 @@ const Input_btn_Login = () => {
 
   const navigate = useNavigate();
 
-  let boton;
-  if (usuario === "" || pass === "") {
-    boton = true;
-  }
-
   const iniciarSesion = () => {
     const url = "https://crypto.develotion.com/login.php";
 
@@ -54,7 +49,7 @@ const Input_btn_Login = () => {
           id="btn_login"
           value="ingresar"
           onClick={iniciarSesion}
-          disabled={boton}
+          disabled={usuario === "" || pass === ""}
         />
       </div>
     </div>
