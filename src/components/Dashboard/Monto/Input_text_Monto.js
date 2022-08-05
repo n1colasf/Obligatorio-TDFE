@@ -15,21 +15,18 @@ const Input_text_Monto = () => {
     }
   });
 
-  let mensaje = "";
-  if (montoTotal > 0) {
-    mensaje = "¡Muy buenas inversiones! ¡Sigue así!";
-  } else {
-    mensaje = "¡No desesperes! ¡Ya casi lo tienes!";
-  }
-
   return (
     <div className="row justify-content-center">
       <h2 className="gigante centrado" id="tot-trans">
         $ {montoTotal.toLocaleString("en-US")}
       </h2>
-      <p className="centrado mediano" id="tot-mensaje">
-        {mensaje}
-      </p>
+      <div className="centrado mediano" id="tot-mensaje">
+        {montoTotal > 0 ? (
+          <p className="text-success">¡Muy buenas inversiones! ¡Sigue así!</p>
+        ) : (
+          <p className="text-danger">¡No desesperes! ¡Ya casi lo tienes!</p>
+        )}
+      </div>
     </div>
   );
 };

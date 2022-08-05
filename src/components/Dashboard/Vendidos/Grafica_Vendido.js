@@ -49,8 +49,6 @@ const Grafica_Vendido = () => {
     dispatch(agregarVentas(array));
   }, [transacciones]);
 
-  console.log(graficaVentas);
-
   return (
     <div>
       <div className="card-body">

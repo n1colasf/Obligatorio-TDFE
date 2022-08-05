@@ -48,8 +48,6 @@ const Grafica_Comp = () => {
     dispatch(agregarCompras(array));
   }, [transacciones]);
 
-  console.log(graficaCompras);
-
   return (
     <div>
       <div className="card-body">

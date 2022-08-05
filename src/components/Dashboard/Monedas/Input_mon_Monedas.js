@@ -4,6 +4,27 @@ import { selectMoneda } from "../../../features/monedasSlice";
 
 const Input_mon_Monedas = () => {
   const monedas = useSelector((state) => state.monedas.monedas);
+  const transacciones = useSelector(
+    (store) => store.usuarioLogin.transacciones
+  );
+
+  let monedasUnicas = new Map(
+    transacciones
+      .filter((trans) => trans.moneda != 0)
+      .map((item) => [item["moneda"], item])
+  ).values();
+  let monedasUnicasArray = [...new Set(monedasUnicas)];
+
+  let arrayMonedasUser = [];
+  monedas.forEach((moneda) => {
+    monedasUnicasArray.forEach((trans) => {
+      if (moneda.id === trans.moneda) {
+        arrayMonedasUser.push(moneda);
+      }
+    });
+  });
+
+  console.log(monedasUnicas);
 
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
@@ -14,29 +35,31 @@ const Input_mon_Monedas = () => {
   };
 
   return (
-    <div className="row justify-content-center">
-      <div className="col-md-8">
-        <label id="inicio">moneda: </label>
-        <select
-          className="form-select"
-          id="inp_mon_monedas"
-          ref={input_usuario}
-          defaultValue="default"
-          onChange={capturarValor}
-        >
-          <option value="default" disabled>
-            seleccione moneda
-          </option>
-          {monedas.map((moneda) => (
-            <option key={moneda.id} value={moneda.id}>
-              {moneda.nombre}
+    <div className="card-body">
+      <div className="row justify-content-center">
+        <div className="col-md-8">
+          <label id="inicio">moneda: </label>
+          <select
+            className="form-select"
+            id="inp_mon_monedas"
+            ref={input_usuario}
+            defaultValue="default"
+            onChange={capturarValor}
+          >
+            <option value="default" disabled>
+              seleccione moneda
             </option>
-          ))}
-        </select>
-        <div className="row">
-          <label className="text-muted" id="inp_grafico_monedas"></label>
+            {arrayMonedasUser.map((moneda) => (
+              <option key={moneda.id} value={moneda.id}>
+                {moneda.nombre}
+              </option>
+            ))}
+          </select>
+          <div className="row">
+            <label className="text-muted" id="inp_grafico_monedas"></label>
+          </div>
+          <br />
         </div>
-        <br />
       </div>
     </div>
   );

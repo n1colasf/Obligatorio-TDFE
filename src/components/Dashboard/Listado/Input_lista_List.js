@@ -7,25 +7,27 @@ const Input_lista_List = () => {
   );
 
   return (
-    <div className="row justify-content-center">
-      <div className="col-md-10">
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Operación</th>
-              <th scope="col">Moneda</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Cotización</th>
-              <th scope="col">Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {transacciones.map((trans) => (
-              <Item_lista_List key={trans.id} {...trans} />
-            ))}
-          </tbody>
-        </table>
-        <br />
+    <div className="card-body">
+      <div className="row justify-content-center">
+        <div className="col-md-10">
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Operación</th>
+                <th scope="col">Moneda</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Cotización</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {transacciones.map((trans) => (
+                <Item_lista_List key={trans.id} {...trans} />
+              ))}
+            </tbody>
+          </table>
+          <br />
+        </div>
       </div>
     </div>
   );
