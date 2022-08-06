@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const Grafica_Monedas = () => {
+const GraficaMonedas = () => {
   const transacciones = useSelector(
     (store) => store.usuarioLogin.transacciones
   );
@@ -66,4 +66,4 @@ const Grafica_Monedas = () => {
   );
 };
 
-export default Grafica_Monedas;
+export default GraficaMonedas;

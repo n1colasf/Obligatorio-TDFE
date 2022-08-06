@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { guardarPass } from "../../features/registroSlice";
 
-const Input_pass_Reg = () => {
+const InputPassReg = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
@@ -27,4 +27,4 @@ const Input_pass_Reg = () => {
   );
 };
 
-export default Input_pass_Reg;
+export default InputPassReg;

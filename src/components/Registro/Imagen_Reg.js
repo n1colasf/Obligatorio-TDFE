@@ -1,12 +1,12 @@
 import SoloLogo from "../../img/solologo.png";
 
-const Imagen_Reg = () => {
+const ImagenReg = () => {
   return (
     <>
-      <img className="card-img-top" id="img_sm" src={SoloLogo} />
+      <img className="card-img-top" id="img_sm" src={SoloLogo} alt=""/>
       <h3 className="col centrado">creá tu cuenta y operá con criptomonedas</h3>
     </>
   );
 };
 
-export default Imagen_Reg;
+export default ImagenReg;

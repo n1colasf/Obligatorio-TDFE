@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const Grafica_Comp = () => {
+const GraficaComp = () => {
   const monedas = useSelector((state) => state.monedas.monedas);
   const transacciones = useSelector(
     (state) => state.usuarioLogin.transacciones
@@ -80,4 +80,4 @@ const Grafica_Comp = () => {
   );
 };
 
-export default Grafica_Comp;
+export default GraficaComp;

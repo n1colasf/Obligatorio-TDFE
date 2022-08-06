@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { guardarApi, guardarId } from "../../features/loginSlice";
 import { useNavigate } from "react-router-dom";
 
-const Input_btn_Login = () => {
+const InputBtnLogin = () => {
   const dispatch = useDispatch();
   const usuario = useSelector((store) => store.usuarioLogin.usuario);
   const pass = useSelector((store) => store.usuarioLogin.pass);
@@ -56,4 +56,4 @@ const Input_btn_Login = () => {
   );
 };
 
-export default Input_btn_Login;
+export default InputBtnLogin;

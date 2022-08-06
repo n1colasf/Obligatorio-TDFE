@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { agregarTrans } from "../../../features/loginSlice";
 
-const Input_btn_Trans = () => {
+const InputBtnTrans = () => {
   const dispatch = useDispatch();
 
   const monedas = useSelector((store) => store.monedas.monedas);
@@ -68,4 +68,4 @@ const Input_btn_Trans = () => {
   );
 };
 
-export default Input_btn_Trans;
+export default InputBtnTrans;

@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const Grafica_Vendido = () => {
+const GraficaVendido = () => {
   const monedas = useSelector((state) => state.monedas.monedas);
   const transacciones = useSelector(
     (state) => state.usuarioLogin.transacciones
@@ -81,4 +81,4 @@ const Grafica_Vendido = () => {
   );
 };
 
-export default Grafica_Vendido;
+export default GraficaVendido;

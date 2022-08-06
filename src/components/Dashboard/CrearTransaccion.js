@@ -1,21 +1,21 @@
-import Imagen_Trans from "./Transaccion/Imagen_Trans";
-import Input_btn_Trans from "./Transaccion/Input_btn_Trans";
-import Input_cant_Trans from "./Transaccion/Input_cant_Trans";
-import Input_moneda_Trans from "./Transaccion/Input_moneda_Trans";
-import Input_tipo_Trans from "./Transaccion/Input_tipo_Trans";
+import ImagenTrans from "./Transaccion/Imagen_Trans";
+import InputBtnTrans from "./Transaccion/Input_btn_Trans";
+import InputCantTrans from "./Transaccion/Input_cant_Trans";
+import InputMonedaTrans from "./Transaccion/Input_moneda_Trans";
+import InputTipoTrans from "./Transaccion/Input_tipo_Trans";
 
 const CrearTransaccion = () => {
   return (
     <>
-      <Imagen_Trans />
+      <ImagenTrans />
       <div className="card-body">
-        <Input_tipo_Trans />
+        <InputTipoTrans />
         <br />
-        <Input_moneda_Trans />
+        <InputMonedaTrans />
         <br />
-        <Input_cant_Trans />
+        <InputCantTrans />
         <br />
-        <Input_btn_Trans />
+        <InputBtnTrans />
         <br />
       </div>
     </>

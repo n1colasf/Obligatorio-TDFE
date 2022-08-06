@@ -3,13 +3,13 @@ import { useDispatch } from "react-redux";
 import { guardarDeptos } from "../features/departamentosSlice";
 import { guardarCitys } from "../features/ciudadesSlice";
 //COMPONENTES
-import Imagen_Reg from "./Registro/Imagen_Reg";
-import Input_usuario_Reg from "./Registro/Input_usuario_Reg";
-import Input_pass_Reg from "./Registro/Input_pass_Reg";
-import Input_depto_Reg from "./Registro/Input_depto_Reg";
-import Input_city_Reg from "./Registro/Input_city_Reg";
-import Input_btn_Reg from "./Registro/Input_btn_Reg";
-import Input_link_Reg from "./Registro/Input_link_Reg";
+import ImagenReg from "./Registro/Imagen_Reg";
+import InputUsuarioReg from "./Registro/Input_usuario_Reg";
+import InputPassReg from "./Registro/Input_pass_Reg";
+import InputDeptoReg from "./Registro/Input_depto_Reg";
+import InputCityReg from "./Registro/Input_city_Reg";
+import InputBtnReg from "./Registro/Input_btn_Reg";
+import InputLinkReg from "./Registro/Input_link_Reg";
 
 //bug: TypeError: null is not an object (evaluating 'select_deptos.innerHTML')
 //bug: Si navegas del login al registro por segunda vez, no se cargan los departamentos
@@ -46,18 +46,18 @@ const Registro = () => {
     <div className="container">
       <div className="card shadow">
         <br />
-        <Imagen_Reg />
+        <ImagenReg />
         <div className="card-body">
-          <Input_usuario_Reg />
+          <InputUsuarioReg />
           <br />
-          <Input_pass_Reg />
+          <InputPassReg />
           <br />
-          <Input_depto_Reg />
+          <InputDeptoReg />
           <br />
-          <Input_city_Reg />
+          <InputCityReg />
           <br />
-          <Input_btn_Reg />
-          <Input_link_Reg />
+          <InputBtnReg />
+          <InputLinkReg />
         </div>
       </div>
       <br />

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { guardarTipo } from "../../../features/transaccionSlice";
 
-const Input_tipo_Trans = () => {
+const InputTipoTrans = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
@@ -32,4 +32,4 @@ const Input_tipo_Trans = () => {
   );
 };
 
-export default Input_tipo_Trans;
+export default InputTipoTrans;

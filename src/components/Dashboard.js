@@ -63,7 +63,7 @@ const Dashboard = () => {
         <br />
         <div className="d-grid gap-2 d-md-flex justify-content-end">
           <button className="btn btn-light mediano" disabled>
-            <img className="img-fluid" id="chico" src={imgLogo} /> ¡hola{" "}
+            <img className="img-fluid" id="chico" src={imgLogo} alt=""/> ¡hola{" "}
             {usuario}!
           </button>
         </div>

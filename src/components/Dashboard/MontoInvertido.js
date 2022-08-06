@@ -1,12 +1,12 @@
-import Imagen_Monto from "./Monto/Imagen_Monto";
-import Input_text_Monto from "./Monto/Input_text_Monto";
+import ImagenMonto from "./Monto/Imagen_Monto";
+import InputTextMonto from "./Monto/Input_text_Monto";
 
 const MontoInvertido = () => {
   return (
     <>
-      <Imagen_Monto />
+      <ImagenMonto />
       <br />
-      <Input_text_Monto />
+      <InputTextMonto />
       <br/>
     </>
   );

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import Item_lista_List from "./Item_lista_List";
+import ItemListaList from "./Item_lista_List";
 
-const Input_lista_List = () => {
+const InputListaList = () => {
   const transacciones = useSelector(
     (state) => state.usuarioLogin.transacciones
   );
@@ -22,7 +22,7 @@ const Input_lista_List = () => {
             </thead>
             <tbody>
               {transacciones.map((trans) => (
-                <Item_lista_List key={trans.id} {...trans} />
+                <ItemListaList key={trans.id} {...trans} />
               ))}
             </tbody>
           </table>
@@ -33,4 +33,4 @@ const Input_lista_List = () => {
   );
 };
 
-export default Input_lista_List;
+export default InputListaList;

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-const Input_text_Monto = () => {
+const InputTextMonto = () => {
   const transacciones = useSelector(
     (state) => state.usuarioLogin.transacciones
   );
@@ -31,4 +31,4 @@ const Input_text_Monto = () => {
   );
 };
 
-export default Input_text_Monto;
+export default InputTextMonto;

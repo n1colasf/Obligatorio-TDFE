@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Input_link_Reg = () => {
+const InputLinkReg = () => {
   return (
     <p id="margin_top" className="centrado">
       <small className="text-muted" id="margin_top">
@@ -13,4 +13,4 @@ const Input_link_Reg = () => {
   );
 };
 
-export default Input_link_Reg;
+export default InputLinkReg;

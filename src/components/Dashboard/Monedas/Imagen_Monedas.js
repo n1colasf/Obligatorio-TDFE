@@ -1,12 +1,12 @@
-import ImagenMoneda from "../../../img/moneda.png";
+import ImgMoneda from "../../../img/moneda.png";
 
-const Imagen_Monedas = () => {
+const ImagenMonedas = () => {
   return (
     <>
-      <img className="card-img-top margin_bot" id="img_sm" src={ImagenMoneda} />
+      <img className="card-img-top margin_bot" id="img_sm" src={ImgMoneda} alt=""/>
       <h3 className="col centrado">gráfico por moneda</h3>
     </>
   );
 };
 
-export default Imagen_Monedas;
+export default ImagenMonedas;

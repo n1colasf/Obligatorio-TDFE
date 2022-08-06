@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { guardarUsuario } from "../../features/registroSlice";
 
-const Input_usuario_Reg = () => {
+const InputUsuarioReg = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
@@ -27,4 +27,4 @@ const Input_usuario_Reg = () => {
   );
 };
 
-export default Input_usuario_Reg;
+export default InputUsuarioReg;

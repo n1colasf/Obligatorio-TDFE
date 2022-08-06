@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-const Item_lista_List = ({
+const ItemListaList = ({
   tipo_operacion,
   moneda,
   cantidad,
@@ -34,4 +34,4 @@ const Item_lista_List = ({
   );
 };
 
-export default Item_lista_List;
+export default ItemListaList;

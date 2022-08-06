@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { guardarMoneda } from "../../../features/transaccionSlice";
 
-const Input_moneda_Trans = () => {
+const InputMonedaTrans = () => {
   const monedas = useSelector((state) => state.monedas.monedas);
 
   const input_usuario = useRef(null);
@@ -52,4 +52,4 @@ const Input_moneda_Trans = () => {
   );
 };
 
-export default Input_moneda_Trans;
+export default InputMonedaTrans;

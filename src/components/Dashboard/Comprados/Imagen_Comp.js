@@ -1,12 +1,12 @@
-import ImagenComp from "../../../img/compra.png";
+import ImgComp from "../../../img/compra.png";
 
-const Imagen_Comp = () => {
+const ImagenComp = () => {
   return (
     <>
-      <img className="card-img-top margin_bot" id="img_sm" src={ImagenComp} />
+      <img className="card-img-top margin_bot" id="img_sm" src={ImgComp} alt="" />
       <h3 className="col centrado">montos comprados</h3>
     </>
   );
 };
 
-export default Imagen_Comp;
+export default ImagenComp;

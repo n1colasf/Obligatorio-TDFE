@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { guardarDepto } from "../../features/registroSlice";
 
-const Input_depto_Reg = () => {
+const InputDeptoReg = () => {
   const departamentos = useSelector(
     (state) => state.departamentos.departamentos
   );
@@ -40,4 +40,4 @@ const Input_depto_Reg = () => {
   );
 };
 
-export default Input_depto_Reg;
+export default InputDeptoReg;

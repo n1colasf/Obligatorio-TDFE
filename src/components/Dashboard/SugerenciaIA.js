@@ -1,11 +1,11 @@
-import Imagen_Suger from "./Sugerencia/Imagen_Suger";
-import Input_lista_Suger from "./Sugerencia/Input_lista_Suger";
+import ImagenSuger from "./Sugerencia/Imagen_Suger";
+import InputListaSuger from "./Sugerencia/Input_lista_Suger";
 
 const SugerenciaIA = () => {
   return (
     <>
-      <Imagen_Suger />
-      <Input_lista_Suger />
+      <ImagenSuger />
+      <InputListaSuger />
     </>
   );
 };

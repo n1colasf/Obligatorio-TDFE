@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { guardarApi, guardarId } from "../../features/loginSlice";
 import { useNavigate } from "react-router-dom";
 
-const Input_btn_Reg = () => {
+const InputBtnReg = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -76,4 +76,4 @@ const Input_btn_Reg = () => {
   );
 };
 
-export default Input_btn_Reg;
+export default InputBtnReg;

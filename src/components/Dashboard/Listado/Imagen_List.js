@@ -1,12 +1,12 @@
-import ImagenLista from "../../../img/Lista.png";
+import ImgLista from "../../../img/Lista.png";
 
-const Imagen_List = () => {
+const ImagenList = () => {
   return (
     <>
-      <img className="card-img-top margin_bot" id="img_sm" src={ImagenLista} />
+      <img className="card-img-top margin_bot" id="img_sm" src={ImgLista} alt="" />
       <h3 className="col centrado">listado de transacciones</h3>
     </>
   );
 };
 
-export default Imagen_List;
+export default ImagenList;

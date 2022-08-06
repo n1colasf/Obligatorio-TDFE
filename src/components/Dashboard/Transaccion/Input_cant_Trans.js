@@ -5,7 +5,7 @@ import {
   guardarTotal,
 } from "../../../features/transaccionSlice";
 
-const Input_cant_Trans = () => {
+const InputCantTrans = () => {
   const monedas = useSelector((state) => state.monedas.monedas);
   const idMoneda = useSelector((state) => state.transaccion.moneda);
 
@@ -51,4 +51,4 @@ const Input_cant_Trans = () => {
     </>
   );
 };
-export default Input_cant_Trans;
+export default InputCantTrans;

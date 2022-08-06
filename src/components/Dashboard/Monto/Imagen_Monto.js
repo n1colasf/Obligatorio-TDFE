@@ -1,12 +1,17 @@
-import ImagenMonto from "../../../img/monto.png";
+import ImgMonto from "../../../img/monto.png";
 
-const Imagen_Monto = () => {
+const ImagenMonto = () => {
   return (
     <>
-      <img className="card-img-top margin_bot" id="img_sm" src={ImagenMonto} />
+      <img
+        className="card-img-top margin_bot"
+        id="img_sm"
+        src={ImgMonto}
+        alt=""
+      />
       <h3 className="col centrado">monto invertido</h3>
     </>
   );
 };
 
-export default Imagen_Monto;
+export default ImagenMonto;

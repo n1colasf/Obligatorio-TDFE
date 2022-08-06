@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { guardarUsuario } from "../../features/loginSlice";
 
-const Input_usuario_Login = () => {
+const InputUsuarioLogin = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
@@ -27,4 +27,4 @@ const Input_usuario_Login = () => {
   );
 };
 
-export default Input_usuario_Login;
+export default InputUsuarioLogin;

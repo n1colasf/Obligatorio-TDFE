@@ -1,12 +1,12 @@
-import ImagenVend from "../../../img/venta.png";
+import ImgVend from "../../../img/venta.png";
 
-const Imagen_Vendido = () => {
+const ImagenVendido = () => {
   return (
     <>
-      <img className="card-img-top margin_bot" id="img_sm" src={ImagenVend} />
+      <img className="card-img-top margin_bot" id="img_sm" src={ImgVend} alt=""/>
       <h3 className="col centrado">montos vendidos</h3>
     </>
   );
 };
 
-export default Imagen_Vendido;
+export default ImagenVendido;

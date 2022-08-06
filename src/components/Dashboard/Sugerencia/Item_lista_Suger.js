@@ -1,4 +1,4 @@
-const Item_lista_Suger = ({
+const ItemListaSuger = ({
   operacion,
   nombreMoneda,
   valor_compra,
@@ -16,4 +16,4 @@ const Item_lista_Suger = ({
   );
 };
 
-export default Item_lista_Suger;
+export default ItemListaSuger;

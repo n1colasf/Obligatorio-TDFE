@@ -1,11 +1,11 @@
-import ImagenLogin from "../../img/Criptort.png";
+import Img_Login from "../../img/Criptort.png";
 
-const Imagen_Login = () => {
+const ImagenLogin = () => {
   return (
     <>
-      <img className="card-img-top" src={ImagenLogin}></img>
+      <img className="card-img-top" src={Img_Login} alt=""></img>
     </>
   );
 };
 
-export default Imagen_Login;
+export default ImagenLogin;

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { guardarCity } from "../../features/registroSlice";
 
-const Input_city_Reg = () => {
+const InputCityReg = () => {
   const dispatch = useDispatch();
 
   const deptos = useSelector((state) => state.departamentos.departamentos);
@@ -33,7 +33,6 @@ const Input_city_Reg = () => {
           <option value="default" disabled>
             seleccione ciudad
           </option>
-          //bug: selecciona siempre la primera ciudad en vez de default
           {ciudades
             .filter((city) => city.id_departamento == select_depto)
             .map((cit) => (
@@ -47,4 +46,4 @@ const Input_city_Reg = () => {
   );
 };
 
-export default Input_city_Reg;
+export default InputCityReg;
