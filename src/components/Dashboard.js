@@ -100,7 +100,7 @@ const Dashboard = () => {
         <div className="row">
           <div className="col text-center">
             <button className="btn btn-danger" onClick={irAlogin}>
-              Cerrar Sesión
+              Ir al inicio
             </button>
           </div>
         </div>
