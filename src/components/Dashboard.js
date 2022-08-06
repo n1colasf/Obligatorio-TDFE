@@ -54,6 +54,7 @@ const Dashboard = () => {
   }, []);
 
   const irAlogin = () => {
+    //solo redirige al login, no borra el store acrtual, hay que refrescar la pagina para borrarlo
     navigate("/");
   };
 
@@ -63,7 +64,7 @@ const Dashboard = () => {
         <br />
         <div className="d-grid gap-2 d-md-flex justify-content-end">
           <button className="btn btn-light mediano" disabled>
-            <img className="img-fluid" id="chico" src={imgLogo} alt=""/> ¡hola{" "}
+            <img className="img-fluid" id="chico" src={imgLogo} alt="" /> ¡hola{" "}
             {usuario}!
           </button>
         </div>
@@ -100,11 +101,10 @@ const Dashboard = () => {
         <div className="row">
           <div className="col text-center">
             <button className="btn btn-danger" onClick={irAlogin}>
-              Ir al inicio
+              cerrar sesión
             </button>
           </div>
         </div>
-        <br />
         <br />
         <br />
       </div>
