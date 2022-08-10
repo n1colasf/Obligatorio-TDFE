@@ -8,7 +8,6 @@ const InputMonedaTrans = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
-  //bug: falta corregir que al cambiar la moneda se cambie el total en el otro componente
   const capturarValor = () => {
     let valorIdMoneda = input_usuario.current.value;
     dispatch(guardarMoneda(valorIdMoneda));

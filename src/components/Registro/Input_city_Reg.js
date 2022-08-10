@@ -6,7 +6,6 @@ import { guardarCity } from "../../features/registroSlice";
 const InputCityReg = () => {
   const dispatch = useDispatch();
 
-  const deptos = useSelector((state) => state.departamentos.departamentos);
   const ciudades = useSelector((state) => state.ciudades.ciudades);
 
   const input_usuario = useRef(null);
