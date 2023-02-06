@@ -24,7 +24,7 @@ const Dashboard = () => {
   const idUsuario = useSelector((state) => state.usuarioLogin.id);
 
   useEffect(() => {
-    if (apiKey == "") {
+    if (apiKey === "") {
       navigate("/");
     } else {
       const urlMoneda = `https://crypto.develotion.com/monedas.php`;

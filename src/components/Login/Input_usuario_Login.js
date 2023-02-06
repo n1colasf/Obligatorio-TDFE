@@ -21,6 +21,7 @@ const InputUsuarioLogin = () => {
           id="inp_usuario"
           className="form-control"
           onKeyUp={capturarValor}
+          placeholder="Linkedin"
         />
       </div>
     </div>

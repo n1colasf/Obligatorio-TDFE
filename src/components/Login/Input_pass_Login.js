@@ -21,6 +21,7 @@ const InputPassLogin = () => {
           id="inp_password"
           className="form-control"
           onKeyUp={capturarValor}
+          placeholder="1234"
         />
       </div>
     </div>

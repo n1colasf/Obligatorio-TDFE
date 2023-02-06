@@ -37,7 +37,7 @@ const Registro = () => {
       .then((data) => {
         dispatch(guardarCitys(data.ciudades));
       });
-  },);
+  });
 
   return (
     <div className="container">

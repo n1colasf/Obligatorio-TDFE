@@ -49,7 +49,6 @@ const InputBtnLogin = () => {
           id="btn_login"
           value="ingresar"
           onClick={iniciarSesion}
-          disabled={usuario === "" || pass === ""}
         />
       </div>
     </div>

@@ -27,13 +27,12 @@ const InputCityReg = () => {
           id="inp_reg_ciudad"
           ref={input_usuario}
           defaultValue="default"
-          onChange={capturarValor}
+          onChangeCapture={capturarValor}
         >
           <option value="default" disabled>
             seleccione ciudad
           </option>
           {ciudades
-            .filter((city) => city.id_departamento == select_depto)
             .map((cit) => (
               <option key={cit.id} value={cit.id}>
                 {cit.nombre}

@@ -26,7 +26,7 @@ const InputDeptoReg = () => {
           ref={input_usuario}
           onChange={capturarValor}
         >
-          <option value="default" disabled>
+          <option value="default">
             seleccione departamento
           </option>
           {departamentos.map((dep) => (
