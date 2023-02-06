@@ -21,8 +21,8 @@ const InputListaList = () => {
               </tr>
             </thead>
             <tbody>
-              {transacciones.map((trans) => (
-                <ItemListaList key={trans.id} {...trans} />
+              {transacciones.map((transaccion) => (
+                <ItemListaList key={transaccion.id} {...transaccion} />
               ))}
             </tbody>
           </table>

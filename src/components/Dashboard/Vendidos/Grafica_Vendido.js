@@ -39,8 +39,8 @@ const GraficaVendido = () => {
       suma = 0;
       transacciones.forEach((transaccion) => {
         if (transaccion.moneda === moneda.id) {
-          if (transaccion.tipo_operacion === 2) {
-            suma += transaccion.cantidad * transaccion.valor_actual;
+          if (transaccion.tipoOperacion === 2) {
+            suma += transaccion.cantidad * transaccion.valorActual;
           }
         }
       });

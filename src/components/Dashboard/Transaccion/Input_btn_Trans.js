@@ -26,7 +26,7 @@ const InputBtnTrans = () => {
       tipoOperacion: Number(tipo),
       moneda: Number(idMoneda),
       cantidad: Number(cantidad),
-      valorActual: valorActMoneda,
+      valorActual: Number(valorActMoneda),
     };
     fetch(url, {
       method: "POST",
@@ -39,12 +39,12 @@ const InputBtnTrans = () => {
       .then((respuesta) => respuesta.json())
       .then((data) => {
         const aux = {
-          id: data.idTransaccion,
+          id: data.id,
           usuarios_id: transaccion.idUsuario,
-          tipo_operacion: transaccion.tipoOperacion,
-          moneda: transaccion.moneda,
-          cantidad: transaccion.cantidad,
-          valor_actual: transaccion.valorActual,
+          tipoOperacion: transaccion.tipoOperacion,
+          moneda: Number(transaccion.moneda),
+          cantidad: Number(transaccion.cantidad),
+          valorActual: Number(transaccion.valorActual),
         };
         dispatch(agregarTrans(aux));
       });

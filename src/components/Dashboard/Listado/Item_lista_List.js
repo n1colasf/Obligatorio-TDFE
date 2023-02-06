@@ -1,16 +1,11 @@
 import { useSelector } from "react-redux";
 
-const ItemListaList = ({
-  tipo_operacion,
-  moneda,
-  cantidad,
-  valor_actual,
-}) => {
+const ItemListaList = ({ tipoOperacion, moneda, cantidad, valorActual }) => {
   const monedas = useSelector((store) => store.monedas.monedas);
   let operacion = "";
   let nombreMoneda = "";
 
-  if (tipo_operacion === 1) {
+  if (tipoOperacion === 1) {
     operacion = "Compra";
   } else {
     operacion = "Venta";
@@ -26,9 +21,9 @@ const ItemListaList = ({
       <tr>
         <td>{operacion}</td>
         <td>{nombreMoneda}</td>
-        <td>{cantidad.toLocaleString("en-US")}</td>
-        <td>$ {valor_actual.toLocaleString("en-US")}</td>
-        <td>$ {(cantidad * valor_actual).toLocaleString("en-US")}</td>
+        <td>{cantidad}</td>
+        <td>{valorActual}</td>
+        <td>$ {cantidad * valorActual}</td>
       </tr>
     </>
   );

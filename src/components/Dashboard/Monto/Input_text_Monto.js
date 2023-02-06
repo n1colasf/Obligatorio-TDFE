@@ -8,10 +8,10 @@ const InputTextMonto = () => {
   let montoTotal = 0;
 
   transacciones.forEach((trans) => {
-    if (trans.tipo_operacion === 1)
-      montoTotal -= trans.cantidad * trans.valor_actual;
+    if (trans.tipoOperacion === 1)
+      montoTotal -= trans.cantidad * trans.valorActual;
     else {
-      montoTotal += trans.cantidad * trans.valor_actual;
+      montoTotal += trans.cantidad * trans.valorActual;
     }
   });
 

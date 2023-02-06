@@ -23,7 +23,7 @@ const InputCantTrans = () => {
           valor_total.innerHTML =
             `Total: $` +
             ` ` +
-            (valorCantidad * moneda.cotizacion).toLocaleString("en-US");
+            (valorCantidad * moneda.cotizacion);
           dispatch(guardarTotal(valorCantidad * moneda.cotizacion));
         }
       });

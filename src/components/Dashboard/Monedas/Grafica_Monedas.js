@@ -54,7 +54,7 @@ const GraficaMonedas = () => {
                 data: transacciones
                   .filter((trans) => trans.moneda == selectMonedas)
                   .filter((trans) => trans.moneda != 0)
-                  .map((trans) => trans.valor_actual),
+                  .map((trans) => trans.valorActual),
                 backgroundColor: "rgba(0, 119, 234, 0.8)",
                 borderColor: "rgba(0, 119, 234, 0.8)",
               },

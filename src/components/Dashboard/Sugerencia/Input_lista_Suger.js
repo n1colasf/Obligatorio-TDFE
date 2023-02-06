@@ -16,13 +16,13 @@ const InputListaSuger = () => {
       for (let i = transacciones.length - 1; i >= 0; i--) {
         let obj = [];
         if (transacciones[i].moneda === monedas[m].id) {
-          if (transacciones[i].tipo_operacion === 1) {
-            if (transacciones[i].valor_actual < monedas[m].cotizacion) {
+          if (transacciones[i].tipoOperacion === 1) {
+            if (transacciones[i].valorActual < monedas[m].cotizacion) {
               obj = {
                 operacion: "Vender",
                 nombreMoneda: monedas[m].nombre,
                 id: monedas[m].id,
-                valor_compra: transacciones[i].valor_actual,
+                valor_compra: transacciones[i].valorActual,
                 valor_actual: monedas[m].cotizacion,
               };
               setSugerencia((suger) => [...suger, obj]);
@@ -32,19 +32,19 @@ const InputListaSuger = () => {
                 operacion: "Comprar",
                 nombreMoneda: monedas[m].nombre,
                 id: monedas[m].id,
-                valor_compra: transacciones[i].valor_actual,
+                valor_compra: transacciones[i].valorActual,
                 valor_actual: monedas[m].cotizacion,
               };
               setSugerencia((suger) => [...suger, obj]);
               break;
             }
-          } else if (transacciones[i].tipo_operacion === 2) {
-            if (transacciones[i].valor_actual > monedas[m].cotizacion) {
+          } else if (transacciones[i].tipoOperacion === 2) {
+            if (transacciones[i].valorActual > monedas[m].cotizacion) {
               obj = {
                 operacion: "Comprar",
                 nombreMoneda: monedas[m].nombre,
                 id: monedas[m].id,
-                valor_compra: transacciones[i].valor_actual,
+                valor_compra: transacciones[i].valorActual,
                 valor_actual: monedas[m].cotizacion,
               };
               setSugerencia((suger) => [...suger, obj]);
@@ -54,7 +54,7 @@ const InputListaSuger = () => {
                 operacion: "Vender",
                 nombreMoneda: monedas[m].nombre,
                 id: monedas[m].id,
-                valor_compra: transacciones[i].valor_actual,
+                valor_compra: transacciones[i].valorActual,
                 valor_actual: monedas[m].cotizacion,
               };
               setSugerencia((suger) => [...suger, obj]);

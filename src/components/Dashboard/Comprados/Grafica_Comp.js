@@ -38,8 +38,8 @@ const GraficaComp = () => {
       suma = 0;
       transacciones.forEach((transaccion) => {
         if (transaccion.moneda === moneda.id) {
-          if (transaccion.tipo_operacion === 1) {
-            suma += transaccion.cantidad * transaccion.valor_actual;
+          if (transaccion.tipoOperacion === 1) {
+            suma += transaccion.cantidad * transaccion.valorActual;
           }
         }
       });
