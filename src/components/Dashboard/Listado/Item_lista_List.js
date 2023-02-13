@@ -22,7 +22,7 @@ const ItemListaList = ({ tipoOperacion, moneda, cantidad, valorActual }) => {
         <td>{operacion}</td>
         <td>{nombreMoneda}</td>
         <td>{cantidad}</td>
-        <td>{valorActual}</td>
+        <td>$ {valorActual}</td>
         <td>$ {cantidad * valorActual}</td>
       </tr>
     </>
