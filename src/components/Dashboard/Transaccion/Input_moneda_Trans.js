@@ -16,7 +16,7 @@ const InputMonedaTrans = () => {
     {
       monedas.forEach((moneda) => {
         if (moneda.id == valorIdMoneda) {
-          valor_moneda.innerHTML = `Valor: $` + ` ` + moneda.cotizacion;
+          valor_moneda.innerHTML = "Valor: $" + " " + moneda.cotizacion;
         }
       });
     }

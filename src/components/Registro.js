@@ -15,8 +15,8 @@ const Registro = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const urlDeptos = `https://crypto.develotion.com/departamentos.php`;
-    const urlCitys = `https://crypto.develotion.com/ciudades.php`;
+    const urlDeptos = "https://crypto.develotion.com/departamentos.php";
+    const urlCitys = "https://crypto.develotion.com/ciudades.php";
 
     fetch(urlDeptos, {
       headers: {
