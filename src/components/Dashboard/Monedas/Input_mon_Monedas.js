@@ -1,31 +1,31 @@
-import { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectMoneda } from "../../../features/monedasSlice";
+import { useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectMoneda } from '../../../features/monedasSlice'
 
 const InputMonMonedas = () => {
-  const monedas = useSelector((state) => state.monedas.monedas);
+  const monedas = useSelector((state) => state.monedas.monedas)
   const transacciones = useSelector(
     (store) => store.usuarioLogin.transacciones
-  );
+  )
 
-  let monedasUnicas = new Map(
+  const monedasUnicas = new Map(
     transacciones
       .filter((trans) => trans.moneda != 0)
-      .map((item) => [item["moneda"], item])
-  ).values();
-  let monedasUnicasArray = [...new Set(monedasUnicas)];
+      .map((item) => [item.moneda, item])
+  ).values()
+  const monedasUnicasArray = [...new Set(monedasUnicas)]
 
-  let arrayMonedasUser = [];
+  const arrayMonedasUser = []
   monedas.forEach((moneda) => {
     monedasUnicasArray.forEach((trans) => {
       if (moneda.id === trans.moneda) {
-        arrayMonedasUser.push(moneda);
+        arrayMonedasUser.push(moneda)
       }
-    });
-  });
+    })
+  })
 
-  const input_usuario = useRef(null);
-  const dispatch = useDispatch();
+  const input_usuario = useRef(null)
+  const dispatch = useDispatch()
 
   function capturarValor() {
     let valorIdMoneda = input_usuario.current.value;
@@ -33,19 +33,19 @@ const InputMonMonedas = () => {
   }
 
   return (
-    <div className="card-body">
-      <div className="row justify-content-center">
-        <div className="col-md-8">
-          <label id="inicio">
+    <div className='card-body'>
+      <div className='row justify-content-center'>
+        <div className='col-md-8'>
+          <label id='inicio'>
             moneda:
             <select
-              className="form-select"
-              id="inp_mon_monedas"
+              className='form-select'
+              id='inp_mon_monedas'
               ref={input_usuario}
-              defaultValue="default"
+              defaultValue='default'
               onChange={capturarValor}
             >
-              <option value="default" disabled>
+              <option value='default' disabled>
                 seleccione moneda
               </option>
               {arrayMonedasUser.map((moneda) => (
@@ -55,14 +55,14 @@ const InputMonMonedas = () => {
               ))}
             </select>
           </label>
-          <div className="row">
-            <label className="text-muted" id="inp_grafico_monedas"></label>
+          <div className='row'>
+            <label className='text-muted' id='inp_grafico_monedas' />
           </div>
           <br />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default InputMonMonedas;
+export default InputMonMonedas
