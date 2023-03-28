@@ -1,32 +1,31 @@
-import { useRef } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { guardarCity } from "../../features/registroSlice";
+import { useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { guardarCity } from '../../features/registroSlice'
 
 const InputCityReg = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  const ciudades = useSelector((state) => state.ciudades.ciudades);
+  const ciudades = useSelector((state) => state.ciudades.ciudades)
 
-  const input_usuario = useRef(null);
+  const input_usuario = useRef(null)
 
   const capturarValor = () => {
-    let valor = input_usuario.current.value;
-    dispatch(guardarCity(valor));
-  };
+    const valor = input_usuario.current.value
+    dispatch(guardarCity(valor))
+  }
 
   return (
-    <div className="row justify-content-center">
-      <div className="col-md-8">
-        <label id="inicio">ciudad: </label>
+    <div className='row justify-content-center'>
+      <div className='col-md-8'>
+        <label id='inicio'>ciudad: </label>
         <select
-          className="form-select"
-          id="inp_reg_ciudad"
+          className='form-select'
+          id='inp_reg_ciudad'
           ref={input_usuario}
-          defaultValue="default"
+          defaultValue='default'
           onChangeCapture={capturarValor}
         >
-          <option value="default" disabled>
+          <option value='default' disabled>
             seleccione ciudad
           </option>
           {ciudades.map((cit) => (
@@ -37,7 +36,7 @@ const InputCityReg = () => {
         </select>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default InputCityReg;
+export default InputCityReg
