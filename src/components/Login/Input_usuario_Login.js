@@ -6,10 +6,10 @@ const InputUsuarioLogin = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
-  const capturarValor = () => {
+  function capturarValor() {
     let valor = input_usuario.current.value;
     dispatch(guardarUsuario(valor));
-  };
+  }
 
   return (
     <div className="row justify-content-center">

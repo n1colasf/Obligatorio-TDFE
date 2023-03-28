@@ -8,7 +8,7 @@ const InputMonedaTrans = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
-  const capturarValor = () => {
+  function capturarValor() {
     let valorIdMoneda = input_usuario.current.value;
     dispatch(guardarMoneda(valorIdMoneda));
 
@@ -20,7 +20,7 @@ const InputMonedaTrans = () => {
         }
       });
     }
-  };
+  }
   return (
     <div className="row justify-content-center">
       <div className="col-md-8">

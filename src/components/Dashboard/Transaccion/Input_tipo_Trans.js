@@ -6,7 +6,7 @@ const InputTipoTrans = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
-  const capturarValor = () => {
+  function capturarValor() {
     const valorIdMoneda = input_usuario.current.value;
     dispatch(guardarTipo(valorIdMoneda));
   };

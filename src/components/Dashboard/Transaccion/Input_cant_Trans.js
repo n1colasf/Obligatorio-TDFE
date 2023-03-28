@@ -14,7 +14,7 @@ const InputCantTrans = () => {
 
   let valor_total = document.getElementById("trans_valor_tot");
 
-  const capturarValor = () => {
+  function capturarValor() {
     let valorCantidad = input_usuario.current.value;
     dispatch(guardarCantidad(valorCantidad));
     {
@@ -26,7 +26,7 @@ const InputCantTrans = () => {
         }
       });
     }
-  };
+  }
 
   return (
     <>

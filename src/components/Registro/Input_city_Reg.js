@@ -9,10 +9,10 @@ const InputCityReg = () => {
 
   const input_usuario = useRef(null);
 
-  const capturarValor = () => {
+  function capturarValor() {
     const valor = input_usuario.current.value;
     dispatch(guardarCity(valor));
-  };
+  }
 
   return (
     <div className="row justify-content-center">

@@ -27,10 +27,10 @@ const InputMonMonedas = () => {
   const input_usuario = useRef(null);
   const dispatch = useDispatch();
 
-  const capturarValor = () => {
+  function capturarValor() {
     let valorIdMoneda = input_usuario.current.value;
     dispatch(selectMoneda(valorIdMoneda));
-  };
+  }
 
   return (
     <div className="card-body">
