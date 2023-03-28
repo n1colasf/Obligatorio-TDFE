@@ -6,9 +6,9 @@ const InputUsuarioLogin = () => {
   const input_usuario = useRef(null)
   const dispatch = useDispatch()
 
-  function capturarValor() {
-    let valor = input_usuario.current.value;
-    dispatch(guardarUsuario(valor));
+  function capturarValor () {
+    const valor = input_usuario.current.value
+    dispatch(guardarUsuario(valor))
   }
 
   return (

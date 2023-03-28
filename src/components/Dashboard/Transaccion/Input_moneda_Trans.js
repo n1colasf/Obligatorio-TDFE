@@ -8,9 +8,9 @@ const InputMonedaTrans = () => {
   const input_usuario = useRef(null)
   const dispatch = useDispatch()
 
-  function capturarValor() {
-    let valorIdMoneda = input_usuario.current.value;
-    dispatch(guardarMoneda(valorIdMoneda));
+  function capturarValor () {
+    const valorIdMoneda = input_usuario.current.value
+    dispatch(guardarMoneda(valorIdMoneda))
 
     const valor_moneda = document.getElementById('inp_trans_valor')
     {
