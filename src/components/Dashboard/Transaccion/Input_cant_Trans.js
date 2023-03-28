@@ -1,60 +1,54 @@
-import { useRef } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   guardarCantidad,
-  guardarTotal
-} from '../../../features/transaccionSlice'
+  guardarTotal,
+} from "../../../features/transaccionSlice";
 
 const InputCantTrans = () => {
-  const monedas = useSelector((state) => state.monedas.monedas)
-  const idMoneda = useSelector((state) => state.transaccion.moneda)
+  const monedas = useSelector((state) => state.monedas.monedas);
+  const idMoneda = useSelector((state) => state.transaccion.moneda);
 
-  const input_usuario = useRef(null)
-  const dispatch = useDispatch()
+  const input_usuario = useRef(null);
+  const dispatch = useDispatch();
 
-  const valor_total = document.getElementById('trans_valor_tot')
+  const valor_total = document.getElementById("trans_valor_tot");
 
-<<<<<<< HEAD
   function capturarValor() {
     let valorCantidad = input_usuario.current.value;
     dispatch(guardarCantidad(valorCantidad));
-=======
-  const capturarValor = () => {
-    const valorCantidad = input_usuario.current.value
-    dispatch(guardarCantidad(valorCantidad))
->>>>>>> 77d41e4a1a2a30c5c26851e0daf2ed4e822b75d9
     {
       monedas.forEach((moneda) => {
         if (moneda.id == idMoneda) {
           valor_total.innerHTML =
-            'Total: $ ' + valorCantidad * moneda.cotizacion
-          dispatch(guardarTotal(valorCantidad * moneda.cotizacion))
+            "Total: $ " + valorCantidad * moneda.cotizacion;
+          dispatch(guardarTotal(valorCantidad * moneda.cotizacion));
         }
-      })
+      });
     }
   }
 
   return (
     <>
-      <div className='row justify-content-center'>
-        <div className='col-md-8'>
-          <label id='inicio'>
+      <div className="row justify-content-center">
+        <div className="col-md-8">
+          <label id="inicio">
             cantidad:
             <input
-              type='text'
+              type="text"
               ref={input_usuario}
-              id='inp_trans_total'
-              className='form-control'
+              id="inp_trans_total"
+              className="form-control"
               onKeyUp={capturarValor}
-              placeholder='ingrese una cantidad'
+              placeholder="ingrese una cantidad"
             />
           </label>
-          <label className='text-muted' id='trans_valor_tot'>
+          <label className="text-muted" id="trans_valor_tot">
             Total:
           </label>
         </div>
       </div>
     </>
-  )
-}
-export default InputCantTrans
+  );
+};
+export default InputCantTrans;
