@@ -9,9 +9,9 @@ const InputCityReg = () => {
 
   const input_usuario = useRef(null)
 
-  function capturarValor() {
-    const valor = input_usuario.current.value;
-    dispatch(guardarCity(valor));
+  function capturarValor () {
+    const valor = input_usuario.current.value
+    dispatch(guardarCity(valor))
   }
 
   return (
