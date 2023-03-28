@@ -10,7 +10,7 @@ const InputMonMonedas = () => {
 
   const monedasUnicas = new Map(
     transacciones
-      .filter((trans) => trans.moneda != 0)
+      .filter((trans) => trans.moneda !== 0)
       .map((item) => [item.moneda, item])
   ).values();
   const monedasUnicasArray = [...new Set(monedasUnicas)];
