@@ -24,23 +24,25 @@ const InputMonedaTrans = () => {
   return (
     <div className="row justify-content-center">
       <div className="col-md-8">
-        <label id="inicio">moneda: </label>
-        <select
-          className="form-select"
-          id="inp_trans_moneda"
-          ref={input_usuario}
-          defaultValue="default"
-          onChange={capturarValor}
-        >
-          <option value="default" disabled>
-            seleccione moneda
-          </option>
-          {monedas.map((moneda) => (
-            <option key={moneda.id} value={moneda.id}>
-              {moneda.nombre}
+        <label id="inicio">
+          moneda:
+          <select
+            className="form-select"
+            id="inp_trans_moneda"
+            ref={input_usuario}
+            defaultValue="default"
+            onChange={capturarValor}
+          >
+            <option value="default" disabled>
+              seleccione moneda
             </option>
-          ))}
-        </select>
+            {monedas.map((moneda) => (
+              <option key={moneda.id} value={moneda.id}>
+                {moneda.nombre}
+              </option>
+            ))}
+          </select>
+        </label>
         <div className="row">
           <label className="text-muted" id="inp_trans_valor">
             Valor:

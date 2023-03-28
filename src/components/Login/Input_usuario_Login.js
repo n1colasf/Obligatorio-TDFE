@@ -14,15 +14,17 @@ const InputUsuarioLogin = () => {
   return (
     <div className="row justify-content-center">
       <div className="col-md-8">
-        <label id="inicio">usuario: </label>
-        <input
-          type="text"
-          ref={input_usuario}
-          id="inp_usuario"
-          className="form-control"
-          onKeyUp={capturarValor}
-          placeholder="Linkedin"
-        />
+        <label id="inicio">
+          usuario:
+          <input
+            type="text"
+            ref={input_usuario}
+            id="inp_usuario"
+            className="form-control"
+            onKeyUp={capturarValor}
+            placeholder="Linkedin"
+          />
+        </label>
       </div>
     </div>
   );

@@ -21,9 +21,7 @@ const InputCantTrans = () => {
       monedas.forEach((moneda) => {
         if (moneda.id == idMoneda) {
           valor_total.innerHTML =
-            `Total: $` +
-            ` ` +
-            (valorCantidad * moneda.cotizacion);
+            `Total: $ ` + valorCantidad * moneda.cotizacion;
           dispatch(guardarTotal(valorCantidad * moneda.cotizacion));
         }
       });
@@ -34,15 +32,17 @@ const InputCantTrans = () => {
     <>
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <label id="inicio">cantidad: </label>
-          <input
-            type="text"
-            ref={input_usuario}
-            id="inp_trans_total"
-            className="form-control"
-            onKeyUp={capturarValor}
-            placeholder="ingrese una cantidad"
-          />
+          <label id="inicio">
+            cantidad:
+            <input
+              type="text"
+              ref={input_usuario}
+              id="inp_trans_total"
+              className="form-control"
+              onKeyUp={capturarValor}
+              placeholder="ingrese una cantidad"
+            />
+          </label>
           <label className="text-muted" id="trans_valor_tot">
             Total:
           </label>

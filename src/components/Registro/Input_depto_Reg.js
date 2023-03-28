@@ -18,23 +18,23 @@ const InputDeptoReg = () => {
   return (
     <div className="row justify-content-center">
       <div className="col-md-8">
-        <label id="inicio">departamento: </label>
-        <select
-          className="form-select"
-          id="inp_reg_depto"
-          defaultValue="default"
-          ref={input_usuario}
-          onChange={capturarValor}
-        >
-          <option value="default">
-            seleccione departamento
-          </option>
-          {departamentos.map((dep) => (
-            <option key={dep.id} value={dep.id}>
-              {dep.nombre}
-            </option>
-          ))}
-        </select>
+        <label id="inicio">
+          departamento:
+          <select
+            className="form-select"
+            id="inp_reg_depto"
+            defaultValue="default"
+            ref={input_usuario}
+            onChange={capturarValor}
+          >
+            <option value="default">seleccione departamento</option>
+            {departamentos.map((dep) => (
+              <option key={dep.id} value={dep.id}>
+                {dep.nombre}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
     </div>
   );

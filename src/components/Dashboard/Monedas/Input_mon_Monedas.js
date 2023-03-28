@@ -36,23 +36,25 @@ const InputMonMonedas = () => {
     <div className="card-body">
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <label id="inicio">moneda: </label>
-          <select
-            className="form-select"
-            id="inp_mon_monedas"
-            ref={input_usuario}
-            defaultValue="default"
-            onChange={capturarValor}
-          >
-            <option value="default" disabled>
-              seleccione moneda
-            </option>
-            {arrayMonedasUser.map((moneda) => (
-              <option key={moneda.id} value={moneda.id}>
-                {moneda.nombre}
+          <label id="inicio">
+            moneda:
+            <select
+              className="form-select"
+              id="inp_mon_monedas"
+              ref={input_usuario}
+              defaultValue="default"
+              onChange={capturarValor}
+            >
+              <option value="default" disabled>
+                seleccione moneda
               </option>
-            ))}
-          </select>
+              {arrayMonedasUser.map((moneda) => (
+                <option key={moneda.id} value={moneda.id}>
+                  {moneda.nombre}
+                </option>
+              ))}
+            </select>
+          </label>
           <div className="row">
             <label className="text-muted" id="inp_grafico_monedas"></label>
           </div>
