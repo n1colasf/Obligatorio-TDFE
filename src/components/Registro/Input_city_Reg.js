@@ -14,9 +14,6 @@ const InputCityReg = () => {
     let valor = input_usuario.current.value;
     dispatch(guardarCity(valor));
   };
-  let select_depto = useSelector(
-    (store) => store.usuarioRegistro.idDepartamento
-  );
 
   return (
     <div className="row justify-content-center">
@@ -32,12 +29,11 @@ const InputCityReg = () => {
           <option value="default" disabled>
             seleccione ciudad
           </option>
-          {ciudades
-            .map((cit) => (
-              <option key={cit.id} value={cit.id}>
-                {cit.nombre}
-              </option>
-            ))}
+          {ciudades.map((cit) => (
+            <option key={cit.id} value={cit.id}>
+              {cit.nombre}
+            </option>
+          ))}
         </select>
       </div>
     </div>
