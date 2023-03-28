@@ -27,7 +27,7 @@ const Dashboard = () => {
     if (apiKey === "") {
       navigate("/");
     } else {
-      const urlMoneda = `https://crypto.develotion.com/monedas.php`;
+      const urlMoneda = "https://crypto.develotion.com/monedas.php";
       const urlTrans = `https://crypto.develotion.com/transacciones.php?idUsuario=${idUsuario}`;
 
       fetch(urlMoneda, {
