@@ -21,8 +21,8 @@ const InputCantTrans = () => {
       monedas.forEach((moneda) => {
         if (moneda.id == idMoneda) {
           valor_total.innerHTML =
-            `Total: $` +
-            ` ` +
+            "Total: $" +
+            " " +
             (valorCantidad * moneda.cotizacion);
           dispatch(guardarTotal(valorCantidad * moneda.cotizacion));
         }
