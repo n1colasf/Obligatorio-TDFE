@@ -5,6 +5,9 @@ import Dashboard from "./components/Dashboard";
 import { store } from "./store/store";
 import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { inject } from '@vercel/analytics';
+ 
+inject();
 
 function App() {
   return (
